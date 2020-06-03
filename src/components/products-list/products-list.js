@@ -1,11 +1,24 @@
 import React from 'react';
 
-import './product-list';
+import './products-list.css';
 
 const ProductsList = () => {
 
     return (
-        <div>Hello</div>
+        <ul className="items">
+            <li className="item">
+                <img className="item-img" src="#" alt="Торт-1" />
+                <p className="item-name">Торт 1</p>
+            </li>
+            <li className="item">
+                <img className="item-img" src="#" alt="Торт-1" />
+                <p className="item-name">Торт 1</p>
+            </li>
+            <li className="item">
+                <img className="item-img" src="#" alt="Торт-1" />
+                <p className="item-name">Торт 1</p>
+            </li>
+        </ul>
     );
 };
 

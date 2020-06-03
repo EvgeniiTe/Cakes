@@ -1,0 +1,16 @@
+.product {
+    background-color: #F4EBE2;
+    padding: 25px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.product-img {
+    display: inline-block;
+    width: 400px;
+    height: 400px;
+    background-color: skyblue;
+}
