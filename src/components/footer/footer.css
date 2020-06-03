@@ -1,0 +1,16 @@
+footer {
+    padding: 20px 0;
+    background-color: #C2C3D5;
+    margin: 0;
+}
+
+.footer-container {
+    align-items: center;
+}
+
+
+.logo-small {
+    width: 50px;
+    height: 50px;
+    background-color: skyblue;
+}
