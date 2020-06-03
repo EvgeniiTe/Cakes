@@ -36,3 +36,13 @@ nav li {
 nav li:last-child {
     margin-right: 0;
 }
+
+nav li:hover {
+    transform: scale(1.2);
+    transition: transform 1s ease;
+}
+
+.social-links {
+    display: flex;
+}
+

@@ -2,20 +2,20 @@ import React from 'react';
 
 import './footer.css';
 
+import SocialLinks from '../social-links/social-links';
+
 const Footer = () => {
 
     return(
         <footer>
-            <div class="header-footer-container footer-container">
-                <div class="logo-small">
+            <div className="header-footer-container footer-container">
+                <div className="logo-small">
                     <img src="#" alt="logo" />
                 </div>
-                <div class="name">
+                <div className="name">
                     <p>Bohemian Cakes</p>
                 </div>
-                <div class="social-links">
-                    <a href="#" class="social-link"><img src="#" alt="instagram"/></a>
-                </div>
+                <SocialLinks />
             </div>
         </footer>
     );

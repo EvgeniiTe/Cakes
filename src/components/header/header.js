@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './header.css';
+import SocialLinks from '../social-links/social-links';
 
 const Header = () => {
 
@@ -13,9 +14,7 @@ const Header = () => {
                 <div className="logo">
                     <img src="#" alt="logo" />
                 </div>
-                <div className="social-links">
-                    <a href="#" className="social-link"><img src="#" alt="instagram"/></a>
-                </div>
+                <SocialLinks />
             </div> 
 
             <nav>
