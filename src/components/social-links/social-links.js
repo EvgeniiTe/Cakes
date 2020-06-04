@@ -8,7 +8,7 @@ const SocialLinks = () => {
         <div className="social-links">
             <a href="https://www.instagram.com/bohemian_cakes/" 
                 target="_blank" className="social-link">
-                    <img src="./pic/inst.png" alt="instagram" width="40px" height="40px"/>
+                    <img src="./pic/inst.png" alt="instagram" width="40px" title="Instagram"/>
             </a>
         </div>
     );

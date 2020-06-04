@@ -2,19 +2,22 @@ import React from 'react';
 
 import './header.css';
 import SocialLinks from '../social-links/social-links';
+import Logo from '../logo/logo';
 
 const Header = () => {
 
     return(
-        <header>
-            <div className="header-footer-container">
-                <div className="name">
+        <header id="Header">
+            <div className="header-footer-container header-container">
+                <div className="name flex-item">
                     <p>Bohemian Cakes</p>
                 </div>
-                <div className="logo">
-                    <img src="#" alt="logo" />
+                <div className="logo flex-item">
+                    <Logo height="280rem"/>
                 </div>
-                <SocialLinks />
+                <div className="flex-item">
+                    <SocialLinks />
+                </div>
             </div> 
 
             <nav>

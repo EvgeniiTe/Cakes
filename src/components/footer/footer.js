@@ -2,6 +2,8 @@ import React from 'react';
 
 import './footer.css';
 
+import Logo from '../logo/logo'
+
 import SocialLinks from '../social-links/social-links';
 
 const Footer = () => {
@@ -9,13 +11,15 @@ const Footer = () => {
     return(
         <footer>
             <div className="header-footer-container footer-container">
-                <div className="logo-small">
-                    <img src="#" alt="logo" />
+                <div className="logo flex-item">
+                    <Logo height="100rem"/>
                 </div>
-                <div className="name">
+                <div className="name flex-item">
                     <p>Bohemian Cakes</p>
                 </div>
-                <SocialLinks />
+                <div className="flex-item">
+                    <SocialLinks />
+                </div>
             </div>
         </footer>
     );

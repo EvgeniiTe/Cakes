@@ -10,12 +10,22 @@ header {
     justify-content: space-between;
     padding: 0 20px;
     color: #ffffff;
+    margin: auto;
+}
+
+.header-container .flex-item {
+    width: 300px;
+    height: auto;
 }
 
 .logo {
-    width: 190px;
-    height: 190px;
-    background-color: skyblue;
+    text-align: center;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 45px;
+    cursor: pointer;
 }
 
 nav {
@@ -31,6 +41,7 @@ nav ul {
 
 nav li {
     margin-right: 150px;
+    font-size: large;
 }
 
 nav li:last-child {
@@ -42,7 +53,4 @@ nav li:hover {
     transition: transform 1s ease;
 }
 
-.social-links {
-    display: flex;
-}
 

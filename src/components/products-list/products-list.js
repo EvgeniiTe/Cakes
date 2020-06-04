@@ -2,22 +2,23 @@ import React from 'react';
 
 import './products-list.css';
 
-const ProductsList = () => {
+const ProductsList = ({data, itemSelected}) => {
+
+    const items = data.map((item) => {
+        const { id, name, picture } = item;
+        return(
+            <li className="item"
+                key={id}
+                onClick={() => itemSelected(id)}>
+                <img className="item-img" src={picture} alt={name} width="180px" />
+                <p className="item-name">{name}</p>
+            </li>
+        );
+    });
 
     return (
         <ul className="items">
-            <li className="item">
-                <img className="item-img" src="#" alt="Торт-1" />
-                <p className="item-name">Торт 1</p>
-            </li>
-            <li className="item">
-                <img className="item-img" src="#" alt="Торт-1" />
-                <p className="item-name">Торт 1</p>
-            </li>
-            <li className="item">
-                <img className="item-img" src="#" alt="Торт-1" />
-                <p className="item-name">Торт 1</p>
-            </li>
+            {items}
         </ul>
     );
 };

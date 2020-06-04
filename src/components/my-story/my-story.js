@@ -5,7 +5,7 @@ import './my-story.css';
 const MyStory = () => {
 
     return(
-        <section className="story">
+        <section id="MyStory" className="story">
             <h2>Моя история</h2>
             <p>параграф</p>
             <p>параграф</p>
