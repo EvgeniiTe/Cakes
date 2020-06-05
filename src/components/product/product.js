@@ -14,13 +14,13 @@ export default class Product extends Component {
 
     componentDidMount() {
         this.updateItem();
-    };
+    }
 
     componentDidUpdate(prevProps) {
         if (this.props.itemId !== prevProps.itemId) {
           this.updateItem();
         }
-    };
+    }
 
     updateItem() {
         const { itemId } = this.props;
@@ -35,7 +35,7 @@ export default class Product extends Component {
                     selectedItem: item,
                 });
             });
-    };
+    }
 
     render() {
 
@@ -59,4 +59,4 @@ export default class Product extends Component {
             </article>
         );
     }
-};
+}
