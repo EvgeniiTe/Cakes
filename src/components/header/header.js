@@ -6,6 +6,32 @@ import Logo from '../logo/logo';
 
 const Header = () => {
 
+    const navInfo = [
+        {
+            word: 'Начало',
+            ref: '#'
+        },
+        
+        {
+            word: 'Ассортимент',
+            ref: '#'
+        },
+
+        {
+            word: 'Заказать',
+            ref: '#'
+        },
+
+        {
+            word: 'Отзывы',
+            ref: '#'
+        },
+    ];
+
+    const navInfoMap = navInfo.map(({word, ref}) => {
+        return <li><a href={ref}>{word}</a></li>
+    });
+
     return(
         <header id="Header">
             <div className="header-footer-container header-container">
@@ -22,10 +48,7 @@ const Header = () => {
 
             <nav>
                 <ul>
-                    <li><a href="#">Начало</a></li>
-                    <li><a href="#">Ассортимент</a></li>
-                    <li><a href="#">Заказать</a></li>
-                    <li><a href="#">Отзывы</a></li>
+                    {navInfoMap}
                 </ul>
             </nav>  
         </header>
