@@ -2,7 +2,7 @@ import React from 'react';
 
 import './main-info.css';
 
-const MainInfo = () => {
+export const MainInfo = () => {
 
     return (
         <section id="MainInfo" className="main-info">
@@ -18,5 +18,3 @@ const MainInfo = () => {
         </section>
     );
 };
-
-export default MainInfo;

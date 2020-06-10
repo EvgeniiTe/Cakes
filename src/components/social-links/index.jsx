@@ -2,7 +2,7 @@ import React from 'react';
 
 import './social-links.css';
 
-const SocialLinks = () => {
+export const SocialLinks = () => {
 
     return(
         <div className="social-links">
@@ -13,5 +13,3 @@ const SocialLinks = () => {
         </div>
     );
 };
-
-export default SocialLinks;

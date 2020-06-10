@@ -2,7 +2,7 @@ import React from 'react';
 
 import './my-story.css';
 
-const MyStory = () => {
+export const MyStory = () => {
 
     return(
         <section id="MyStory" className="story">
@@ -14,5 +14,3 @@ const MyStory = () => {
       </section>
     );
 };
-
-export default MyStory;

@@ -2,11 +2,11 @@ import React from 'react';
 
 import './footer.css';
 
-import Logo from '../logo'
+import {Logo} from '../logo'
 
-import SocialLinks from '../social-links';
+import {SocialLinks} from '../social-links';
 
-const Footer = () => {
+export const Footer = () => {
 
     return(
         <footer>
@@ -24,5 +24,3 @@ const Footer = () => {
         </footer>
     );
 };
-
-export default Footer;

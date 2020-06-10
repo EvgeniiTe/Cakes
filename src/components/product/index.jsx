@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import './product.css';
 
-import Service from '../../services/service';
+import {Service} from '../../services/service';
 
-export default class Product extends Component {
+export class Product extends Component {
 
     state={
         selectedItem: null,

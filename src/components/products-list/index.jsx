@@ -2,7 +2,7 @@ import React from 'react';
 
 import './products-list.css';
 
-const ProductsList = ({data, itemSelected}) => {
+export const ProductsList = ({data, itemSelected}) => {
 
     const items = data.map((item) => {
         const { id, name, picture } = item;
@@ -22,5 +22,3 @@ const ProductsList = ({data, itemSelected}) => {
         </ul>
     );
 };
-
-export default ProductsList;

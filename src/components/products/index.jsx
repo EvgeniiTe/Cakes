@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 import './products.css';
 
-import ProductsList from '../products-list';
-import Product from '../product';
-import Service from '../../services/service';
+import {ProductsList} from '../products-list';
+import {Product} from '../product';
+import {Service} from '../../services/service';
 
-export default class Products extends Component {
+export class Products extends Component {
 
     state ={
         itemId: null,

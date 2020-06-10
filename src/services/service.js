@@ -1,4 +1,4 @@
-export default class Service {
+export class Service {
   _cakes = [
     {
       id: 1,

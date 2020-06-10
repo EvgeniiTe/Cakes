@@ -1,10 +1,10 @@
 import React from 'react';
 
 import './header.css';
-import SocialLinks from '../social-links';
-import Logo from '../logo';
+import {SocialLinks} from '../social-links';
+import {Logo} from '../logo';
 
-const Header = () => {
+export const Header = () => {
 
     const navInfo = [
         {
@@ -55,5 +55,3 @@ const Header = () => {
         
     );
 };
-
-export default Header;
