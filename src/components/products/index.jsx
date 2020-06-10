@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 import './products.css';
 
-import ProductsList from '../products-list/products-list';
-import Product from '../product/product';
+import ProductsList from '../products-list';
+import Product from '../product';
 import Service from '../../services/service';
 
 export default class Products extends Component {

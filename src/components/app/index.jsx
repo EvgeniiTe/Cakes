@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 
 import './app.css';
 
-import Header from '../header/header';
-import MainInfo from '../main-info/main-info';
-import Products from '../products/products';
-import MyStory from '../my-story/my-story';
-import Footer from '../footer/footer';
+import Header from '../header';
+import MainInfo from '../main-info';
+import Products from '../products';
+import MyStory from '../my-story';
+import Footer from '../footer';
 
-export default class App extends Component {
+export class App extends Component {
 
     render() {
 

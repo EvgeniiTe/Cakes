@@ -1,8 +1,8 @@
 import React from 'react';
 
 import './header.css';
-import SocialLinks from '../social-links/social-links';
-import Logo from '../logo/logo';
+import SocialLinks from '../social-links';
+import Logo from '../logo';
 
 const Header = () => {
 

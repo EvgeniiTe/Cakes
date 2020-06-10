@@ -2,9 +2,9 @@ import React from 'react';
 
 import './footer.css';
 
-import Logo from '../logo/logo'
+import Logo from '../logo'
 
-import SocialLinks from '../social-links/social-links';
+import SocialLinks from '../social-links';
 
 const Footer = () => {
 
