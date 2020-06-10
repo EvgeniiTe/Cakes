@@ -29,7 +29,7 @@ export const Header = () => {
     ];
 
     const navInfoMap = navInfo.map(({word, ref}) => {
-        return <li><a href={ref}>{word}</a></li>
+        return <li key={word}><a href={ref}>{word}</a></li>
     });
 
     return(

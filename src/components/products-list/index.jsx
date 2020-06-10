@@ -8,7 +8,7 @@ export const ProductsList = ({data, itemSelected}) => {
         const { id, name, picture } = item;
         return(
             <li className="item"
-                key={id}
+                key={name}
                 onClick={() => itemSelected(id)}>
                 <img className="item-img" src={picture} alt={name} width="180px" />
                 <p className="item-name">{name}</p>
