@@ -10,23 +10,38 @@ export class Products extends Component {
 
     state ={
         itemId: null,
+        dataList: []
     };
 
     service = new Service();
+
+    componentDidMount() {
+        this.getDataList();
+    }
 
     itemSelected = (itemId) => {
         this.setState({ itemId });
     }
 
+    getDataList() {
+        this.service.getAllCakes()
+        .then((data) => {                
+            this.setState({
+                dataList: data
+            });
+        });
+    }
+
 
     render() {   
+        const { itemId, dataList } = this.state;
     
         return(
             <section id="Products" className="products">
                 <ProductsList 
-                    data={this.service.getAllCakes()}
+                    data={dataList}
                     itemSelected={this.itemSelected} />
-                <Product itemId={this.state.itemId}/>
+                <Product itemId={itemId}/>
             </section>
         );
     }
