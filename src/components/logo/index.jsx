@@ -1,9 +1,14 @@
 import React from 'react';
 
-export const Logo = (props) => {
-    const { height } = props;
+import { DrawImage } from '../draw-image';
+
+export const Logo = ({ height }) => {
 
     return(
-        <img src="./pic/logo.png" height={height} alt="logo" />
+        <DrawImage 
+            className="" 
+            src="./pic/logo.png" 
+            height={height}
+            alt="logo" />
     );
 };

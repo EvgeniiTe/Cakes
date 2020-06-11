@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import './product.css';
 
-import { getCake } from '../../services/service'
+import { getCake } from '../../services/service';
+import { DrawImage } from '../draw-image';
 
 export class Product extends Component {
 
@@ -53,7 +54,11 @@ export class Product extends Component {
                     <h2 className="product-name">{name}</h2>
                     <p className="product-info">{description}</p>
                 </div>
-                <img className="product-img" src={picture} alt="Торт1" width="600px" />
+                <DrawImage 
+                    className="product-img" 
+                    src={picture}
+                    width="600px"
+                    alt={name} />
             </article>
         );
     }

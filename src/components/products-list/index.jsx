@@ -2,6 +2,8 @@ import React from 'react';
 
 import './products-list.css';
 
+import { DrawImage } from '../draw-image';
+
 export const ProductsList = ({data, itemSelected}) => {
 
     const items = data.map((item) => {
@@ -10,7 +12,11 @@ export const ProductsList = ({data, itemSelected}) => {
             <li className="item"
                 key={name}
                 onClick={() => itemSelected(id)}>
-                <img className="item-img" src={picture} alt={name} width="180px" />
+                <DrawImage 
+                    className="item-img" 
+                    src={picture}
+                    width="180px"
+                    alt={name} />
                 <p className="item-name">{name}</p>
             </li>
         );
