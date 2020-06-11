@@ -1,36 +1,11 @@
 import React from 'react';
 
 import './header.css';
-import {SocialLinks} from '../social-links';
-import {Logo} from '../logo';
+import { SocialLinks } from '../social-links';
+import { Logo } from '../logo';
+import { HeaderNav } from '../header-nav'
 
 export const Header = () => {
-
-    const navInfo = [
-        {
-            word: 'Начало',
-            ref: '#'
-        },
-        
-        {
-            word: 'Ассортимент',
-            ref: '#'
-        },
-
-        {
-            word: 'Заказать',
-            ref: '#'
-        },
-
-        {
-            word: 'Отзывы',
-            ref: '#'
-        },
-    ];
-
-    const navInfoMap = navInfo.map(({word, ref}) => {
-        return <li key={word}><a href={ref}>{word}</a></li>
-    });
 
     return(
         <header id="Header">
@@ -45,12 +20,8 @@ export const Header = () => {
                     <SocialLinks />
                 </div>
             </div> 
-
-            <nav>
-                <ul>
-                    {navInfoMap}
-                </ul>
-            </nav>  
+        
+            <HeaderNav />
         </header>
         
     );
