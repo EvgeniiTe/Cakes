@@ -2,15 +2,13 @@ import React, { Component } from 'react';
 
 import './product.css';
 
-import {Service} from '../../services/service';
+import { getCake } from '../../services/service'
 
 export class Product extends Component {
 
     state={
         selectedItem: null,
     };
-
-    service = new Service();
 
     componentDidMount() {
         this.updateItem();
@@ -29,7 +27,7 @@ export class Product extends Component {
             return;
         };
 
-        this.service.getCake(itemId)
+        getCake(itemId)
             .then((item) => {                
                 this.setState({
                     selectedItem: item,

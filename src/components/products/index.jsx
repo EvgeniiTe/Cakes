@@ -4,7 +4,7 @@ import './products.css';
 
 import {ProductsList} from '../products-list';
 import {Product} from '../product';
-import {Service} from '../../services/service';
+import { getAllCakes } from '../../services/service';
 
 export class Products extends Component {
 
@@ -13,7 +13,6 @@ export class Products extends Component {
         dataList: []
     };
 
-    service = new Service();
 
     componentDidMount() {
         this.getDataList();
@@ -24,12 +23,12 @@ export class Products extends Component {
     }
 
     getDataList() {
-        this.service.getAllCakes()
-        .then((data) => {                
-            this.setState({
-                dataList: data
+        getAllCakes()
+            .then((data) => {                
+                this.setState({
+                    dataList: data
+                });
             });
-        });
     }
 
 

@@ -1,18 +1,15 @@
-export class Service {
+  const _urlCakes = './cakes.json';
 
-  _urlCakes = './cakes.json'
-
-  getAllCakes = async () => {
-    return fetch(`${this._urlCakes}`)
+  const getAllCakes = async () => {
+    return fetch(`${_urlCakes}`)
       .then(res => res.json())
       .then(data => data.cakes);
   };
   
-  getCake = async (id) => {
-    return fetch(`${this._urlCakes}`)
+  const getCake = async (id) => {
+    return fetch(`${_urlCakes}`)
       .then(res => res.json())
       .then(data => data.cakes[id - 1]);
   };
 
-}
-
+export { getAllCakes, getCake };
