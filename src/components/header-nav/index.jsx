@@ -1,38 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export const HeaderNav = () => {
+import { getNavMain } from '../../services/service';
 
-    const navMain = [
-        {
-            navMainWord: 'Начало',
-            navMainRef: '#'
-        },
-        
-        {
-            navMainWord: 'Ассортимент',
-            navMainRef: '#'
-        },
+export class HeaderNav extends Component {
 
-        {
-            navMainWord: 'Заказать',
-            navMainRef: '#'
-        },
+    state={
+        navMain: []
+    }
 
-        {
-            navMainWord: 'Отзывы',
-            navMainRef: '#'
-        },
-    ];
+    componentDidMount() {
+        this.getNavMain();
+    }
 
-    const navMainMap = navMain.map(({navMainWord, navMainRef}) => {
-        return <li key={navMainWord}><a href={navMainRef}>{navMainWord}</a></li>
-    });
+    getNavMain() {
+        getNavMain()
+            .then(data => {
+                this.setState({
+                    navMain: data
+                });
+            });
+    }
 
-    return(
-        <nav>
-            <ul>
-                {navMainMap}
-            </ul>
-        </nav>
-    );
+    render() {
+
+        const navMainMap = this.state.navMain.map(({navMainWord, navMainRef}) => {
+            return <li key={navMainWord}><a href={navMainRef}>{navMainWord}</a></li>
+        });
+    
+        return(
+            <nav>
+                <ul>
+                    {navMainMap}
+                </ul>
+            </nav>
+        );
+    }
 };
