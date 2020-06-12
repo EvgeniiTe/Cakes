@@ -50,5 +50,12 @@
     {"navMainWord":"Ассортимент","navMainRef":"#"},
     {"navMainWord":"Заказать","navMainRef":"#"},
     {"navMainWord":"Отзывы","navMainRef":"#"}
+],
+
+"headerEl":
+[
+    {"HeaderElClass":"name flex-item","HeaderElChild":"name"},
+    {"HeaderElClass":"logo flex-item","HeaderElChild":"logo"},
+    {"HeaderElClass":"flex-item","HeaderElChild":"social"}
 ]
 }

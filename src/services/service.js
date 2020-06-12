@@ -18,4 +18,10 @@ const getNavMain = async () => {
     .then(data => data.navMain);
 };
 
-export { getAllCakes, getCake, getNavMain };
+const getHeaderEl = async () => {
+  return fetch(`${_urlCakes}`)
+    .then(res => res.json())
+    .then(data => data.headerEl);
+};
+
+export { getAllCakes, getCake, getNavMain, getHeaderEl };
