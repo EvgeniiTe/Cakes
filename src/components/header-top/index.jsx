@@ -26,6 +26,7 @@ export const HeaderTop = () => {
 
     const HeaderElMap = HeaderEl.map(({HeaderElClass, HeaderElChild}) => {
         return <CreateDiv
+                    key={`${HeaderElClass}+${HeaderElChild}`}
                     className={HeaderElClass}
                     childEl={HeaderElChild} />
     });

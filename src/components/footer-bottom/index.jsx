@@ -27,6 +27,7 @@ export const FooterBottom = () => {
 
     const FooterElMap = FooterEl.map(({FooterElClass, FooterElChild}) => {
         return <CreateDiv
+                    key={`${FooterElClass}+${FooterElChild}`}
                     className={FooterElClass}
                     childEl={FooterElChild} />
     });
