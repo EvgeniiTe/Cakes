@@ -18,7 +18,7 @@ export class Products extends Component {
         this.getDataList();
     }
 
-    itemSelected = (itemId) => {
+    selectItem = (itemId) => {
         this.setState({ itemId });
     }
 
@@ -39,7 +39,7 @@ export class Products extends Component {
             <section id="Products" className="products">
                 <ProductsList 
                     data={dataList}
-                    itemSelected={this.itemSelected} />
+                    itemSelected={this.selectItem} />
                 <Product itemId={itemId}/>
             </section>
         );
