@@ -9,7 +9,7 @@ export const CreateDiv = (props) => {
 
     return(
         <div className={className}>
-            {childEl}
+            {typeof childEl ==='function'?childEl({}):childEl}
         </div>
     );
 };
