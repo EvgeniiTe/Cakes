@@ -1,27 +1,25 @@
-const _urlCakes = './cakes.json';
+const _URLCAKES = './cakes.json';
 
-const getAllCakes = async () => {
-  return fetch(`${_urlCakes}`)
+export const getAllCakes = () => {
+  return fetch(`${_URLCAKES}`)
     .then(res => res.json())
     .then(data => data.cakes);
 };
 
-const getCake = async (id) => {
-  return fetch(`${_urlCakes}`)
+export const getCake = (id) => {
+  return fetch(`${_URLCAKES}`)
     .then(res => res.json())
     .then(data => data.cakes[id - 1]);
 };
 
-const getNavMain = async () => {
-  return fetch(`${_urlCakes}`)
+export const getNavMain = () => {
+  return fetch(`${_URLCAKES}`)
     .then(res => res.json())
     .then(data => data.navMain);
 };
 
-const getHeaderEl = async () => {
-  return fetch(`${_urlCakes}`)
+export const getHeaderEl = () => {
+  return fetch(`${_URLCAKES}`)
     .then(res => res.json())
     .then(data => data.headerEl);
 };
-
-export { getAllCakes, getCake, getNavMain, getHeaderEl };

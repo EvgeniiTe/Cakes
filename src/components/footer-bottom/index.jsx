@@ -9,31 +9,31 @@ export const FooterBottom = () => {
 
     const FooterEl = [
         {
-            FooterElClass: "logo flex-item",
-            FooterElChild: <Logo height="100rem"/>
+            classEl: "logo flex-item",
+            childEl: <Logo height="100rem"/>
         },
 
         {
-            FooterElClass: "name flex-item",
-            FooterElChild: <p>Bohemian Cakes</p>
+            classEl: "name flex-item",
+            childEl: <p>Bohemian Cakes</p>
         },
 
         {
-            FooterElClass: "flex-item",
-            FooterElChild: <SocialLinks />
+            classEl: "flex-item",
+            childEl: <SocialLinks />
         },
         
     ];
 
-    const FooterElMap = FooterEl.map(({FooterElClass, FooterElChild}) => {
+    const FooterElMap = FooterEl.map(({classEl, childEl}) => {
         return <CreateDiv
-                    key={`${FooterElClass}+${FooterElChild}`}
-                    className={FooterElClass}
-                    childEl={FooterElChild} />
+                    key={`${classEl}+${childEl}`}
+                    className={classEl}
+                    childEl={childEl} />
     });
 
     return(
-        <div className="header-footer-container footer-container">
+        <div classElName="header-footer-container footer-container">
             {FooterElMap}
         </div>
     );

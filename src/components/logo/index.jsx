@@ -5,8 +5,7 @@ import { DrawImage } from '../draw-image';
 export const Logo = ({ height }) => {
 
     return(
-        <DrawImage 
-            className="" 
+        <DrawImage
             src="./pic/logo.png" 
             height={height}
             alt="logo" />

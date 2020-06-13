@@ -9,10 +9,10 @@ export class HeaderNav extends Component {
     }
 
     componentDidMount() {
-        this.getNavMain();
+        this.getNavInfo();
     }
 
-    getNavMain() {
+    getNavInfo() {
         getNavMain()
             .then(data => {
                 this.setState({
@@ -23,7 +23,9 @@ export class HeaderNav extends Component {
 
     render() {
 
-        const navMainMap = this.state.navMain.map(({navMainWord, navMainRef}) => {
+        const { navMain } = this.state;
+
+        const navMainMap = navMain.map(({navMainWord, navMainRef}) => {
             return <li key={navMainWord}><a href={navMainRef}>{navMainWord}</a></li>
         });
     
