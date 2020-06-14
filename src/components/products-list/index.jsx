@@ -4,14 +4,14 @@ import './products-list.css';
 
 import { DrawImage } from '../draw-image';
 
-export const ProductsList = ({data, itemSelected}) => {
+export const ProductsList = ({data, selectItem}) => {
 
     const items = data.map((item) => {
         const { id, name, picture } = item;
         return(
             <li className="item"
                 key={name}
-                onClick={() => itemSelected(id)}>
+                onClick={() => selectItem(id)}>
                 <DrawImage 
                     className="item-img" 
                     src={picture}

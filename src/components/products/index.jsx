@@ -37,7 +37,7 @@ export class Products extends Component {
             <section id="Products" className="products">
                 <ProductsList 
                     data={dataList}
-                    itemSelected={this.selectItem} />
+                    selectItem={this.selectItem} />
                 <Product itemId={itemId}/>
             </section>
         );
