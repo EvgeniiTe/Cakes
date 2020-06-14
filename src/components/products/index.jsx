@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 
 import './products.css';
 
-import {ProductsList} from '../products-list';
-import {Product} from '../product';
+import { ProductsList } from '../products-list';
+import { Product } from '../product';
 import { getAllCakes } from '../../services/service';
 
 export class Products extends Component {
 
-    state ={
+    state = {
         itemId: null,
         dataList: []
     };

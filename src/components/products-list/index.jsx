@@ -4,12 +4,12 @@ import './products-list.css';
 
 import { DrawImage } from '../draw-image';
 
-export const ProductsList = ({data, selectItem}) => {
-
+export const ProductsList = ({ data, selectItem }) => {
     const items = data.map((item) => {
         const { id, name, picture } = item;
-        return(
-            <li className="item"
+        return (
+            <li
+                className="item"
                 key={name}
                 onClick={() => selectItem(id)}>
                 <DrawImage 
@@ -22,7 +22,7 @@ export const ProductsList = ({data, selectItem}) => {
         );
     });
 
-    return (
+    return(
         <ul className="items">
             {items}
         </ul>
