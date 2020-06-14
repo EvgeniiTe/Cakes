@@ -7,11 +7,7 @@ export class HeaderNav extends Component {
     state={
         navMain: []
     }
-
-    componentDidMount() {
-        this.getNavInfo();
-    }
-
+  
     getNavInfo() {
         getNavMain()
             .then(data => {
@@ -19,6 +15,10 @@ export class HeaderNav extends Component {
                     navMain: data
                 });
             });
+    }
+
+    componentDidMount() {
+        this.getNavInfo();
     }
 
     render() {

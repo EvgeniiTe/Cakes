@@ -13,15 +13,6 @@ export class Products extends Component {
         dataList: []
     };
 
-
-    componentDidMount() {
-        this.getDataList();
-    }
-
-    selectItem = (itemId) => {
-        this.setState({ itemId });
-    }
-
     getDataList() {
         getAllCakes()
             .then((data) => {                
@@ -31,6 +22,13 @@ export class Products extends Component {
             });
     }
 
+    componentDidMount() {
+        this.getDataList();
+    }
+
+    selectItem = (itemId) => {
+        this.setState({ itemId });
+    }
 
     render() {   
         const { itemId, dataList } = this.state;

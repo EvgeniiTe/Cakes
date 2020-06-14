@@ -10,11 +10,7 @@ export class HeaderTop extends Component {
     state={
         headerEl: []
     }
-
-    componentDidMount() {
-        this.getHeaderEl()
-    }
-
+    
     getHeaderEl() {
         getHeaderEl()
             .then(data => {
@@ -22,6 +18,10 @@ export class HeaderTop extends Component {
                     headerEl: data
                 });
             });
+    }
+
+    componentDidMount() {
+        this.getHeaderEl()
     }
 
     render() {

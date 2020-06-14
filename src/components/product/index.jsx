@@ -10,17 +10,7 @@ export class Product extends Component {
     state={
         selectedItem: null,
     };
-
-    componentDidMount() {
-        this.updateItem();
-    }
-
-    componentDidUpdate(prevProps) {
-        if (this.props.itemId !== prevProps.itemId) {
-          this.updateItem();
-        }
-    }
-
+    
     updateItem() {
         const { itemId } = this.props;
 
@@ -34,6 +24,16 @@ export class Product extends Component {
                     selectedItem: item,
                 });
             });
+    }
+
+    componentDidMount() {
+        this.updateItem();
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.itemId !== prevProps.itemId) {
+          this.updateItem();
+        }
     }
 
     render() {
