@@ -1,40 +1,39 @@
 import React from 'react';
 
-import { Logo } from '../logo'
+import { Logo } from '../logo';
 import { SocialLinks } from '../social-links';
 import { CreateDiv } from '../create-div';
 
-
 export const FooterBottom = () => {
+  const FooterEl = [
+    {
+      classEl: 'logo flex-item',
+      childEl: <Logo height="100rem" />,
+    },
 
-    const FooterEl = [
-        {
-            classEl: "logo flex-item",
-            childEl: <Logo height="100rem"/>
-        },
+    {
+      classEl: 'name flex-item',
+      childEl: <p>Bohemian Cakes</p>,
+    },
 
-        {
-            classEl: "name flex-item",
-            childEl: <p>Bohemian Cakes</p>
-        },
+    {
+      classEl: 'flex-item',
+      childEl: <SocialLinks />,
+    },
 
-        {
-            classEl: "flex-item",
-            childEl: <SocialLinks />
-        },
-        
-    ];
+  ];
 
-    const FooterElMap = FooterEl.map(({classEl, childEl}) => {
-        return <CreateDiv
-                    key={`${classEl}+${childEl}`}
-                    className={classEl}
-                    childEl={childEl} />
-    });
+  const FooterElMap = FooterEl.map(({ classEl, childEl }) => (
+    <CreateDiv
+      key={`${classEl}+${childEl}`}
+      className={classEl}
+      childEl={childEl}
+    />
+  ));
 
-    return(
-        <div classElName="header-footer-container footer-container">
-            {FooterElMap}
-        </div>
-    );
+  return (
+    <div classElName="header-footer-container footer-container">
+      {FooterElMap}
+    </div>
+  );
 };

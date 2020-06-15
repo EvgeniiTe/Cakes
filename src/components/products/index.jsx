@@ -7,39 +7,39 @@ import { Product } from '../product';
 import { getAllCakes } from '../../services/service';
 
 export class Products extends Component {
-
     state = {
-        itemId: null,
-        dataList: []
+      itemId: null,
+      dataList: [],
     };
 
-    getDataList() {
-        getAllCakes()
-            .then((data) => {                
-                this.setState({
-                    dataList: data
-                });
-            });
+    componentDidMount() {
+      this.getDataList();
     }
 
-    componentDidMount() {
-        this.getDataList();
+    getDataList() {
+      getAllCakes()
+        .then((data) => {
+          this.setState({
+            dataList: data,
+          });
+        });
     }
 
     selectItem = (itemId) => {
-        this.setState({ itemId });
+      this.setState({ itemId });
     }
 
-    render() {   
-        const { itemId, dataList } = this.state;
-    
-        return(
-            <section id="Products" className="products">
-                <ProductsList 
-                    data={dataList}
-                    selectItem={this.selectItem} />
-                <Product itemId={itemId}/>
-            </section>
-        );
+    render() {
+      const { itemId, dataList } = this.state;
+
+      return (
+        <section id="Products" className="products">
+          <ProductsList
+            data={dataList}
+            selectItem={this.selectItem}
+          />
+          <Product itemId={itemId} />
+        </section>
+      );
     }
 }

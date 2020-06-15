@@ -4,11 +4,8 @@ import './footer.css';
 
 import { FooterBottom } from '../footer-bottom';
 
-export const Footer = () => {
-
-    return(
-        <footer>
-            <FooterBottom />
-        </footer>
-    );
-};
+export const Footer = () => (
+  <footer>
+    <FooterBottom />
+  </footer>
+);
