@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import './social-links.css';
+import "./social-links.css";
 
-import { DrawImage } from '../draw-image';
+import { DrawImage } from "../draw-image";
 
 export const SocialLinks = () => {
   return (

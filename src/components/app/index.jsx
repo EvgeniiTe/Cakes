@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import { Header } from '../header';
-import { MainInfo } from '../main-info';
-import { Products } from '../products';
-import { MyStory } from '../my-story';
-import { Footer } from '../footer';
+import { Header } from "../header";
+import { MainInfo } from "../main-info";
+import { Products } from "../products";
+import { MyStory } from "../my-story";
+import { Footer } from "../footer";
 
 export const App = () => (
   <>

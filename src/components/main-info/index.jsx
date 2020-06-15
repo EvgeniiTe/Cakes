@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import './main-info.css';
+import "./main-info.css";
 
 export const MainInfo = () => {
   return (

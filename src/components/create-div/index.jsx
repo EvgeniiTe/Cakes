@@ -1,10 +1,5 @@
-import React from 'react';
+import React from "react";
 
-export const CreateDiv = ({
-  className,
-  childEl,
-}) => (
-  <div className={className}>
-    {childEl}
-  </div>
+export const CreateDiv = ({ className, childEl }) => (
+  <div className={className}>{childEl}</div>
 );

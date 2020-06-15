@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import './footer.css';
+import "./footer.css";
 
-import { FooterBottom } from '../footer-bottom';
+import { FooterBottom } from "../footer-bottom";
 
 export const Footer = () => (
   <footer>

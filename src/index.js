@@ -1,7 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import { App } from "./components/app/index";
 
-import {App} from './components/app/index';
-
-ReactDOM.render(<App />,
-  document.getElementById('root'));
+// eslint-disable-next-line react/jsx-filename-extension
+ReactDOM.render(<App />, document.getElementById("root"));

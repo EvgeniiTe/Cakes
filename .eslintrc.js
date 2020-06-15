@@ -25,5 +25,11 @@ module.exports = {
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/no-noninteractive-element-interactions": 0,
     "arrow-body-style": 0,
+    "quotes": ["error", "double", {
+      "allowTemplateLiterals": true
+    }],
+    "object-curly-newline": ["error", {
+      "multiline": true
+    }]
   },
 };

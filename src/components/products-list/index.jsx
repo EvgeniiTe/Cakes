@@ -1,18 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import './products-list.css';
+import "./products-list.css";
 
-import { DrawImage } from '../draw-image';
+import { DrawImage } from "../draw-image";
 
 export const ProductsList = ({ data, selectItem }) => {
   const items = data.map((item) => {
     const { id, name, picture } = item;
     return (
-      <li
-        key={name}
-        className="item"
-        onClick={() => selectItem(id)}
-      >
+      <li key={name} className="item" onClick={() => selectItem(id)}>
         <DrawImage
           className="item-img"
           src={picture}
@@ -24,9 +20,5 @@ export const ProductsList = ({ data, selectItem }) => {
     );
   });
 
-  return (
-    <ul className="items">
-      {items}
-    </ul>
-  );
+  return <ul className="items">{items}</ul>;
 };
