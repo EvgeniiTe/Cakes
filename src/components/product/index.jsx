@@ -24,7 +24,7 @@ export class Product extends Component {
     updateItem() {
       const { itemId } = this.props;
 
-      if (!itemId) {
+      if (typeof (itemId) !== 'number') {
         return;
       }
 

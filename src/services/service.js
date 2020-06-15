@@ -6,7 +6,7 @@ export const getAllCakes = () => fetch(`${API_STUB}`)
 
 export const getCake = (id) => fetch(`${API_STUB}`)
   .then((res) => res.json())
-  .then((data) => data.cakes[id - 1]);
+  .then((data) => data.cakes[id]);
 
 export const getNavMain = () => fetch(`${API_STUB}`)
   .then((res) => res.json())
