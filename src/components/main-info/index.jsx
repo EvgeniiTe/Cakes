@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { mainInfoFill } from "../../services/service";
 import { PMap } from "../p-map";
+import { CreateDiv } from "../create-div";
+import { CreateHeading } from "../create-heading";
 
 import "./main-info.css";
 
@@ -20,13 +22,15 @@ export class MainInfo extends Component {
   render() {
     const { mainInfo } = this.state;
 
+    const linkStory = () => {
+      return <a href="#MyStory">Моя история</a>;
+    };
+
     return (
       <section id="MainInfo" className="main-info">
-        <h1>Торты на заказ</h1>
+        <CreateHeading h="h1" text="Торты на заказ" />
         <PMap data={mainInfo} />
-        <div className="my-story">
-          <a href="#MyStory">Моя история</a>
-        </div>
+        <CreateDiv className="my-story" childEl={linkStory} />
       </section>
     );
   }

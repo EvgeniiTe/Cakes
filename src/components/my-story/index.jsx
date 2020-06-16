@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { storyInfoFill } from "../../services/service";
 import { PMap } from "../p-map";
+import { CreateHeading } from "../create-heading";
 
 import "./my-story.css";
 
@@ -22,7 +23,7 @@ export class MyStory extends Component {
 
     return (
       <section id="MyStory" className="story">
-        <h2>Моя история</h2>
+        <CreateHeading h="h2" text="Моя история" />
         <PMap data={storyInfo} />
       </section>
     );
