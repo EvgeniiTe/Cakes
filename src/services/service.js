@@ -1,4 +1,4 @@
-const API_STUB = './cakes.json';
+const API_STUB = "./cakes.json";
 
 export const getAllCakes = () => fetch(`${API_STUB}`)
   .then((res) => res.json())
@@ -12,6 +12,10 @@ export const getNavMain = () => fetch(`${API_STUB}`)
   .then((res) => res.json())
   .then((data) => data.navMain);
 
-export const getHeaderEl = () => fetch(`${API_STUB}`)
+export const mainInfoFill = () => fetch(`${API_STUB}`)
   .then((res) => res.json())
-  .then((data) => data.headerEl);
+  .then((data) => data.mainInfoFill);
+
+export const storyInfoFill = () => fetch(`${API_STUB}`)
+  .then((res) => res.json())
+  .then((data) => data.storyInfoFill);

@@ -1,19 +1,33 @@
-import React from "react";
+import React, { Component } from "react";
+import { mainInfoFill } from "../../services/service";
+import { PMap } from "../p-map";
 
 import "./main-info.css";
 
-export const MainInfo = () => {
-  return (
-    <section id="MainInfo" className="main-info">
-      <h1>Торты на заказ</h1>
-      <p>Кондитерская</p>
-      <p>уникальный вкус</p>
-      <p>инженерный подход</p>
-      <p>От 1,5 кг | От 1500/кг</p>
-      <p>Москва</p>
-      <div className="my-story">
-        <a href="#MyStory">Моя история</a>
-      </div>
-    </section>
-  );
-};
+export class MainInfo extends Component {
+  state = { mainInfo: [] };
+
+  componentDidMount() {
+    this.getMainInfo();
+  }
+
+  getMainInfo() {
+    mainInfoFill().then((data) => {
+      this.setState({ mainInfo: data });
+    });
+  }
+
+  render() {
+    const { mainInfo } = this.state;
+
+    return (
+      <section id="MainInfo" className="main-info">
+        <h1>Торты на заказ</h1>
+        <PMap data={mainInfo} />
+        <div className="my-story">
+          <a href="#MyStory">Моя история</a>
+        </div>
+      </section>
+    );
+  }
+}
