@@ -1,37 +1,26 @@
-import React, { Component } from "react";
-import { mainInfoFill } from "../../services/service";
+import React from "react";
 import { PMap } from "../p-map";
 import { CreateDiv } from "../create-div";
 import { CreateHeading } from "../create-heading";
+import { withData } from "../hoc-helpers/with-data";
+import { mainInfoFill } from "../../services/service";
 
 import "./main-info.css";
 
-export class MainInfo extends Component {
-  state = { mainInfo: [] };
+const render = (props) => {
+  const { data } = props;
 
-  componentDidMount() {
-    this.getMainInfo();
-  }
+  const linkStory = () => {
+    return <a href="#MyStory">Моя история</a>;
+  };
 
-  getMainInfo() {
-    mainInfoFill().then((data) => {
-      this.setState({ mainInfo: data });
-    });
-  }
+  return (
+    <section id="MainInfo" className="main-info">
+      <CreateHeading h="h1" text="Торты на заказ" />
+      <PMap data={data} />
+      <CreateDiv className="my-story" childEl={linkStory} />
+    </section>
+  );
+};
 
-  render() {
-    const { mainInfo } = this.state;
-
-    const linkStory = () => {
-      return <a href="#MyStory">Моя история</a>;
-    };
-
-    return (
-      <section id="MainInfo" className="main-info">
-        <CreateHeading h="h1" text="Торты на заказ" />
-        <PMap data={mainInfo} />
-        <CreateDiv className="my-story" childEl={linkStory} />
-      </section>
-    );
-  }
-}
+export const MainInfo = withData(mainInfoFill, render);

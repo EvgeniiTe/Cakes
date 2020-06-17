@@ -5,35 +5,26 @@ import "./products.css";
 import { ProductsList } from "../products-list";
 import { Product } from "../product";
 import { getAllCakes } from "../../services/service";
+import { withData } from "../hoc-helpers/with-data";
 
-export class Products extends Component {
-  state = {
-    itemId: null,
-    dataList: [],
-  };
-
-  componentDidMount() {
-    this.getDataList();
-  }
-
-  getDataList() {
-    getAllCakes().then((data) => {
-      this.setState({ dataList: data });
-    });
-  }
+export class Temp extends Component {
+  state = { itemId: null };
 
   selectItem = (itemId) => {
     this.setState({ itemId });
   };
 
   render() {
-    const { itemId, dataList } = this.state;
+    const { itemId } = this.state;
+    const { data } = this.props;
 
     return (
       <section id="Products" className="products">
-        <ProductsList data={dataList} selectItem={this.selectItem} />
+        <ProductsList data={data} selectItem={this.selectItem} />
         <Product itemId={itemId} />
       </section>
     );
   }
 }
+
+export const Products = withData(getAllCakes, Temp);

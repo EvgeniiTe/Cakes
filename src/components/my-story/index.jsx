@@ -1,31 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
 import { storyInfoFill } from "../../services/service";
 import { PMap } from "../p-map";
 import { CreateHeading } from "../create-heading";
+import { withData } from "../hoc-helpers/with-data";
 
 import "./my-story.css";
 
-export class MyStory extends Component {
-  state = { storyInfo: [] };
+const render = (props) => {
+  const { data } = props;
 
-  componentDidMount() {
-    this.getStoryInfo();
-  }
+  return (
+    <section id="MyStory" className="story">
+      <CreateHeading h="h2" text="Моя история" />
+      <PMap data={data} />
+    </section>
+  );
+};
 
-  getStoryInfo() {
-    storyInfoFill().then((data) => {
-      this.setState({ storyInfo: data });
-    });
-  }
-
-  render() {
-    const { storyInfo } = this.state;
-
-    return (
-      <section id="MyStory" className="story">
-        <CreateHeading h="h2" text="Моя история" />
-        <PMap data={storyInfo} />
-      </section>
-    );
-  }
-}
+export const MyStory = withData(storyInfoFill, render);
