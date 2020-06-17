@@ -1,12 +1,12 @@
 import React from "react";
 
 import { getNavMain } from "../../services/service";
-import { withData } from "../hoc-helpers/with-data";
+import { withApiRequest } from "../hoc-helpers/withApiRequest";
 
 const render = (props) => {
-  const { data } = props;
+  const { response } = props;
 
-  const navMainMap = data.map(({ navMainWord, navMainRef }) => {
+  const navMainMap = response.map(({ navMainWord, navMainRef }) => {
     return (
       <li key={navMainWord}>
         <a href={navMainRef}>{navMainWord}</a>
@@ -21,4 +21,4 @@ const render = (props) => {
   );
 };
 
-export const HeaderNav = withData(getNavMain, render);
+export const HeaderNav = withApiRequest(getNavMain, render);

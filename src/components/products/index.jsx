@@ -5,9 +5,9 @@ import "./products.css";
 import { ProductsList } from "../products-list";
 import { Product } from "../product";
 import { getAllCakes } from "../../services/service";
-import { withData } from "../hoc-helpers/with-data";
+import { withApiRequest } from "../hoc-helpers/withApiRequest";
 
-export class Temp extends Component {
+class Temp extends Component {
   state = { itemId: null };
 
   selectItem = (itemId) => {
@@ -16,15 +16,15 @@ export class Temp extends Component {
 
   render() {
     const { itemId } = this.state;
-    const { data } = this.props;
+    const { response } = this.props;
 
     return (
       <section id="Products" className="products">
-        <ProductsList data={data} selectItem={this.selectItem} />
+        <ProductsList data={response} selectItem={this.selectItem} />
         <Product itemId={itemId} />
       </section>
     );
   }
 }
 
-export const Products = withData(getAllCakes, Temp);
+export const Products = withApiRequest(getAllCakes, Temp);

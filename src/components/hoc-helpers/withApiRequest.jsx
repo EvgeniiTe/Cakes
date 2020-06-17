@@ -1,6 +1,12 @@
 import React, { Component } from "react";
+import {
+  getAllCakes,
+  getNavMain,
+  mainInfoFill,
+  storyInfoFill,
+} from "../../services/service";
 
-export const withData = (getData, Wrapped) => {
+export const withApiRequest = (getData, Wrapped) => {
   return class extends Component {
     state = { data: [] };
 
@@ -23,7 +29,7 @@ export const withData = (getData, Wrapped) => {
     render() {
       const { data } = this.state;
 
-      return <Wrapped data={data} />;
+      return <Wrapped response={data} />;
     }
   };
 };
