@@ -6,7 +6,7 @@ import { withApiRequest } from "../hoc-helpers/withApiRequest";
 
 import "./my-story.css";
 
-const render = (props) => {
+const temp = (props) => {
   const { response } = props;
 
   return (
@@ -17,4 +17,4 @@ const render = (props) => {
   );
 };
 
-export const MyStory = withApiRequest(storyInfoFill, render);
+export const MyStory = withApiRequest(storyInfoFill, temp);

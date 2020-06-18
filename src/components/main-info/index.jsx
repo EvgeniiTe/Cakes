@@ -7,7 +7,7 @@ import { mainInfoFill } from "../../services/service";
 
 import "./main-info.css";
 
-const render = (props) => {
+const temp = (props) => {
   const { response } = props;
 
   const linkStory = () => {
@@ -23,4 +23,4 @@ const render = (props) => {
   );
 };
 
-export const MainInfo = withApiRequest(mainInfoFill, render);
+export const MainInfo = withApiRequest(mainInfoFill, temp);
