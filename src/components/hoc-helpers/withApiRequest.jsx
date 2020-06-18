@@ -16,7 +16,7 @@ export const withApiRequest = (getData, Wrapped) => {
     //   }
     // }
 
-    func = {
+    getFunctions = {
       getAllCakes,
       getNavMain,
       mainInfoFill,
@@ -28,7 +28,9 @@ export const withApiRequest = (getData, Wrapped) => {
     }
 
     getInfo() {
-      this.func[`${getData}`]().then((data) => {
+      const getFunction = this.getFunctions[`${getData}`];
+
+      getFunction().then((data) => {
         this.setState({ data });
       });
     }
