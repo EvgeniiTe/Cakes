@@ -1,5 +1,5 @@
 import React from "react";
-import { PMap } from "../p-map";
+import { ParagraphsLineByLine } from "../paragraphs-line-by-line";
 import { CreateHeading } from "../create-heading";
 import { withApiRequest } from "../hoc-helpers/withApiRequest";
 
@@ -11,7 +11,7 @@ const temp = (props) => {
   return (
     <section id="MyStory" className="story">
       <CreateHeading h="h2" text="Моя история" />
-      <PMap data={response} />
+      <ParagraphsLineByLine data={response} />
     </section>
   );
 };
