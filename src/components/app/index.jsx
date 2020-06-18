@@ -1,9 +1,9 @@
 import React from "react";
 
 import { Header } from "../header";
-import { MainInfo } from "../main-info";
-import { Products } from "../products";
-import { MyStory } from "../my-story";
+import { MainInfoWithApiRequest } from "../main-info";
+import { ProductsWithApiRequest } from "../products";
+import { MyStoryWithApiRequest } from "../my-story";
 import { Footer } from "../footer";
 
 export const App = () => {
@@ -12,9 +12,9 @@ export const App = () => {
       <Header />
       <main>
         <div className="main-container">
-          <MainInfo />
-          <Products />
-          <MyStory />
+          <MainInfoWithApiRequest />
+          <ProductsWithApiRequest />
+          <MyStoryWithApiRequest />
         </div>
       </main>
       <Footer />

@@ -2,7 +2,7 @@ import React from "react";
 
 import { withApiRequest } from "../hoc-helpers/withApiRequest";
 
-const temp = (props) => {
+const HeaderNav = (props) => {
   const { response } = props;
 
   const navMainMap = response.map(({ navMainWord, navMainRef }) => {
@@ -20,4 +20,4 @@ const temp = (props) => {
   );
 };
 
-export const HeaderNav = withApiRequest("getNavMain", temp);
+export const HeaderNavWithApiRequest = withApiRequest("getNavMain", HeaderNav);

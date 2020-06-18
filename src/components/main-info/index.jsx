@@ -6,7 +6,7 @@ import { withApiRequest } from "../hoc-helpers/withApiRequest";
 
 import "./main-info.css";
 
-const temp = (props) => {
+const MainInfo = (props) => {
   const { response } = props;
 
   const linkStory = () => {
@@ -22,4 +22,4 @@ const temp = (props) => {
   );
 };
 
-export const MainInfo = withApiRequest("mainInfoFill", temp);
+export const MainInfoWithApiRequest = withApiRequest("mainInfoFill", MainInfo);
