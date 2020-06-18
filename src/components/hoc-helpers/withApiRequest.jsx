@@ -16,12 +16,19 @@ export const withApiRequest = (getData, Wrapped) => {
     //   }
     // }
 
+    func = {
+      getAllCakes,
+      getNavMain,
+      mainInfoFill,
+      storyInfoFill,
+    };
+
     componentDidMount() {
       this.getInfo();
     }
 
     getInfo() {
-      getData().then((data) => {
+      this.func[`${getData}`]().then((data) => {
         this.setState({ data });
       });
     }

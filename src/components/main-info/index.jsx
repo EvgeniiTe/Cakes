@@ -3,7 +3,6 @@ import { PMap } from "../p-map";
 import { CreateDiv } from "../create-div";
 import { CreateHeading } from "../create-heading";
 import { withApiRequest } from "../hoc-helpers/withApiRequest";
-import { mainInfoFill } from "../../services/service";
 
 import "./main-info.css";
 
@@ -23,4 +22,4 @@ const temp = (props) => {
   );
 };
 
-export const MainInfo = withApiRequest(mainInfoFill, temp);
+export const MainInfo = withApiRequest("mainInfoFill", temp);

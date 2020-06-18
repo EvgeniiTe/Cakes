@@ -1,5 +1,4 @@
 import React from "react";
-import { storyInfoFill } from "../../services/service";
 import { PMap } from "../p-map";
 import { CreateHeading } from "../create-heading";
 import { withApiRequest } from "../hoc-helpers/withApiRequest";
@@ -17,4 +16,4 @@ const temp = (props) => {
   );
 };
 
-export const MyStory = withApiRequest(storyInfoFill, temp);
+export const MyStory = withApiRequest("storyInfoFill", temp);

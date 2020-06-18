@@ -1,6 +1,5 @@
 import React from "react";
 
-import { getNavMain } from "../../services/service";
 import { withApiRequest } from "../hoc-helpers/withApiRequest";
 
 const temp = (props) => {
@@ -21,4 +20,4 @@ const temp = (props) => {
   );
 };
 
-export const HeaderNav = withApiRequest(getNavMain, temp);
+export const HeaderNav = withApiRequest("getNavMain", temp);

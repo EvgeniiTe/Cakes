@@ -4,7 +4,6 @@ import "./products.css";
 
 import { ProductsList } from "../products-list";
 import { Product } from "../product";
-import { getAllCakes } from "../../services/service";
 import { withApiRequest } from "../hoc-helpers/withApiRequest";
 
 class Temp extends Component {
@@ -27,4 +26,4 @@ class Temp extends Component {
   }
 }
 
-export const Products = withApiRequest(getAllCakes, Temp);
+export const Products = withApiRequest("getAllCakes", Temp);
