@@ -1,23 +1,26 @@
 import React from "react";
-
 import { withApiRequest } from "../hoc-helpers/withApiRequest";
 
-const HeaderNav = (props) => {
+
+import * as S from "./styled";
+
+
+const Temp = (props) => {
   const { response } = props;
 
   const navMainMap = response.map(({ navMainWord, navMainRef }) => {
     return (
-      <li key={navMainWord}>
-        <a href={navMainRef}>{navMainWord}</a>
-      </li>
-    );
-  });
+        <S.Li key={navMainWord}>
+          <a href={navMainRef}>{navMainWord}</a>
+        </S.Li>
+      );
+    });
 
   return (
-    <nav>
-      <ul>{navMainMap}</ul>
-    </nav>
-  );
+<S.Nav>
+        <S.Ul>{navMainMap}</S.Ul>
+      </S.Nav>
+)
 };
 
-export const HeaderNavWithApiRequest = withApiRequest("getNavMain", HeaderNav);
+export const HeaderNav = withApiRequest("getNavMain", Temp);

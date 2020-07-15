@@ -1,23 +1,24 @@
 import React from "react";
 
 import { Header } from "../header";
-import { MainInfoWithApiRequest } from "../main-info";
-import { ProductsWithApiRequest } from "../products";
-import { MyStoryWithApiRequest } from "../my-story";
+import { MainInfo } from "../main-info";
+import { Products } from "../products";
+import { MyStory } from "../my-story";
 import { Footer } from "../footer";
+import * as S from "./styled";
 
-export const App = () => {
-  return (
-    <>
-      <Header />
-      <main>
-        <div className="main-container">
-          <MainInfoWithApiRequest />
-          <ProductsWithApiRequest />
-          <MyStoryWithApiRequest />
-        </div>
-      </main>
-      <Footer />
-    </>
-  );
-};
+
+export const App = () => (
+  <>
+    <S.GlobalStyle />
+    <Header />
+    <main>
+      <S.MainContainer>
+        <MainInfo />
+        <Products />
+        <MyStory />
+      </S.MainContainer>
+    </main>
+    <Footer />
+  </>
+);

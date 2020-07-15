@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 
-import "./products.css";
-
 import { ProductsList } from "../products-list";
 import { Product } from "../product";
+import * as S from "./styled";
 import { withApiRequest } from "../hoc-helpers/withApiRequest";
 
-class Products extends Component {
+class Temp extends Component {
   state = { itemId: null };
 
   selectItem = (itemId) => {
@@ -18,12 +17,12 @@ class Products extends Component {
     const { response } = this.props;
 
     return (
-      <section id="Products" className="products">
+      <S.Products>
         <ProductsList data={response} selectItem={this.selectItem} />
         <Product itemId={itemId} />
-      </section>
+      </S.Products>
     );
   }
 }
 
-export const ProductsWithApiRequest = withApiRequest("getAllCakes", Products);
+export const Products = withApiRequest("getAllCakes", Temp);

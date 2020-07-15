@@ -1,13 +1,13 @@
 import React from "react";
 
-import "./header.css";
+import * as S from "./styled";
 
 import { HeaderTop } from "../header-top";
-import { HeaderNavWithApiRequest } from "../header-nav";
+import { HeaderNav } from "../header-nav";
 
 export const Header = () => (
-  <header id="Header">
+  <S.Header>
     <HeaderTop />
-    <HeaderNavWithApiRequest />
-  </header>
+    <HeaderNav />
+  </S.Header>
 );
