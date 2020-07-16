@@ -5,7 +5,7 @@ import { CreateHeading } from "../create-heading";
 import * as S from "./styled";
 import { withApiRequest } from "../hoc-helpers/withApiRequest";
 
-const Temp = (props) => {
+const MainInfoRender = (props) => {
   const { response } = props;
 
   const linkStory = () => {
@@ -13,12 +13,12 @@ const Temp = (props) => {
   };
 
   return (
- <S.MainInfo>
-        <CreateHeading h="h1" text="Торты на заказ" />
-        <ParagraphsLineByLine data={response} />
-        <CreateDiv className="MyStoryLink" childEl={linkStory} />
-      </S.MainInfo>
+    <S.MainInfo>
+      <CreateHeading h="h1" text="Торты на заказ" />
+      <ParagraphsLineByLine data={response} />
+      <CreateDiv className="MyStoryLink" childEl={linkStory} />
+    </S.MainInfo>
   );
 };
-        
-export const MainInfo = withApiRequest("mainInfoFill", Temp);
+
+export const MainInfo = withApiRequest("mainInfoFill", MainInfoRender);

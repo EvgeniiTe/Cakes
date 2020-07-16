@@ -5,7 +5,7 @@ import { Product } from "../product";
 import * as S from "./styled";
 import { withApiRequest } from "../hoc-helpers/withApiRequest";
 
-class Temp extends Component {
+class ProductsRender extends Component {
   state = { itemId: null };
 
   selectItem = (itemId) => {
@@ -25,4 +25,4 @@ class Temp extends Component {
   }
 }
 
-export const Products = withApiRequest("getAllCakes", Temp);
+export const Products = withApiRequest("getAllCakes", ProductsRender);
