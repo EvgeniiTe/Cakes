@@ -1,61 +1,21 @@
-export default class Service {
-  _cakes = [
-    {
-      id: 1,
-      name: 'Трюфель',
-      priceKg: '1500',
-      description: 'Ароматный бисквит, приготовленный на франзузском какао. Прекрасно сочетается с кремом на основе темного шоколада и взбитых сливок. По желания можно добавить вишневое компоте.',
-      picture: './pic/Трюфель.png'
-    },
+const API_STUB = "./cakes.json";
 
-    {
-      id: 2,
-      name: 'Сливочная вишня',
-      priceKg: '2000',
-      description: 'Нежный, сливочный вкус этого торта никого не оставит равнодушным. Нежный шоколадный бисквит, воздушный кремчиз и вишневый кули, ничего лишнего.',
-      picture: './pic/Сливочная вишня.png',
-    },
+export const getAllCakes = () => fetch(`${API_STUB}`)
+  .then((res) => res.json())
+  .then((data) => data.cakes);
 
-    {
-      id: 3,
-      name: 'Сникерс',
-      priceKg: '2000',
-      description: 'Влажный шоколадный бисквит, крем на основе сливочного сыра, тягучая карамель и жареный арахис объединились, чтобы подарить вам невероятный ансамбль вкуса и текстур.',
-      picture: './pic/Сливочная вишня.png',
-    },
+export const getCake = (id) => fetch(`${API_STUB}`)
+  .then((res) => res.json())
+  .then((data) => data.cakes[id]);
 
-    {
-      id: 4,
-      name: 'Медовик',
-      priceKg: '1500',
-      description: 'Знакомый с детства вкус воздушных медовых коржей со сметанно-сливочным кремом, дополненный легкими ягодными нотками, которые создаются лепестками клубники, уложенными между слоями.',
-      picture: './pic/Шоколадное мороженое.jpg',
-    },
+export const getNavMain = () => fetch(`${API_STUB}`)
+  .then((res) => res.json())
+  .then((data) => data.navMain);
 
-    {
-      id: 5,
-      name: 'Мёд и белый шоколад',
-      priceKg: '2000',
-      description: 'Ароматные медовые коржи, укутанные облаками из крема на основе сливочного сыра и белого шоколада. Сладость этого торта оттеняет клубничный конфи. Возможен как стандартный круглый торт, так и торт-цифра.',
-      picture: './pic/Мёд и белый шоколад.png',
-    },
+export const mainInfoFill = () => fetch(`${API_STUB}`)
+  .then((res) => res.json())
+  .then((data) => data.mainInfoFill);
 
-    {
-      id: 6,
-      name: 'Шоколадное мороженое',
-      priceKg: '1500',
-      description: 'Влажный шоколадный бисквит в сочетании со взбитым ганашем на молочном шоколаде. По вкусу крем очень напоминает шоколадный пломбир. По желанию можно добавить клубничное компоте.',
-      picture: './pic/Шоколадное мороженое.jpg',
-    },
-  ];
-
-  getAllCakes = () => {
-    return this._cakes;
-  };
-
-  getCake = async (id) => {
-    return this._cakes[id - 1];
-  };
-
-}
-
+export const storyInfoFill = () => fetch(`${API_STUB}`)
+  .then((res) => res.json())
+  .then((data) => data.storyInfoFill);
