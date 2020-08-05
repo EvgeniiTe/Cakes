@@ -1,37 +1,24 @@
-import React, { Component } from "react";
-import { mainInfoFill } from "../../services/service";
-import { PMap } from "../p-map";
+import React from "react";
+import { ParagraphsLineByLine } from "../paragraphs-line-by-line";
 import { CreateDiv } from "../create-div";
 import { CreateHeading } from "../create-heading";
+import * as S from "./styled";
+import { withApiRequest } from "../hoc-helpers/withApiRequest";
 
-import "./main-info.css";
+const MainInfoRender = (props) => {
+  const { response } = props;
 
-export class MainInfo extends Component {
-  state = { mainInfo: [] };
+  const linkStory = () => {
+    return <S.MyStoryLink href="#MyStory">Моя история</S.MyStoryLink>;
+  };
 
-  componentDidMount() {
-    this.getMainInfo();
-  }
+  return (
+    <S.MainInfo>
+      <CreateHeading h="h1" text="Торты на заказ" />
+      <ParagraphsLineByLine data={response} />
+      <CreateDiv className="MyStoryLink" childEl={linkStory} />
+    </S.MainInfo>
+  );
+};
 
-  getMainInfo() {
-    mainInfoFill().then((data) => {
-      this.setState({ mainInfo: data });
-    });
-  }
-
-  render() {
-    const { mainInfo } = this.state;
-
-    const linkStory = () => {
-      return <a href="#MyStory">Моя история</a>;
-    };
-
-    return (
-      <section id="MainInfo" className="main-info">
-        <CreateHeading h="h1" text="Торты на заказ" />
-        <PMap data={mainInfo} />
-        <CreateDiv className="my-story" childEl={linkStory} />
-      </section>
-    );
-  }
-}
+export const MainInfo = withApiRequest("mainInfoFill", MainInfoRender);

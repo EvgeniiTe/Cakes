@@ -1,39 +1,28 @@
 import React, { Component } from "react";
 
-import "./products.css";
-
 import { ProductsList } from "../products-list";
 import { Product } from "../product";
-import { getAllCakes } from "../../services/service";
+import * as S from "./styled";
+import { withApiRequest } from "../hoc-helpers/withApiRequest";
 
-export class Products extends Component {
-  state = {
-    itemId: null,
-    dataList: [],
-  };
-
-  componentDidMount() {
-    this.getDataList();
-  }
-
-  getDataList() {
-    getAllCakes().then((data) => {
-      this.setState({ dataList: data });
-    });
-  }
+class ProductsRender extends Component {
+  state = { itemId: null };
 
   selectItem = (itemId) => {
     this.setState({ itemId });
   };
 
   render() {
-    const { itemId, dataList } = this.state;
+    const { itemId } = this.state;
+    const { response } = this.props;
 
     return (
-      <section id="Products" className="products">
-        <ProductsList data={dataList} selectItem={this.selectItem} />
+      <S.Products>
+        <ProductsList data={response} selectItem={this.selectItem} />
         <Product itemId={itemId} />
-      </section>
+      </S.Products>
     );
   }
 }
+
+export const Products = withApiRequest("getAllCakes", ProductsRender);
