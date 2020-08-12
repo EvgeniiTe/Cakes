@@ -10,14 +10,14 @@ import * as S from "./styled";
 export const App = () => (
   <>
     <S.GlobalStyle />
-    <Header />
+    {/* <Header /> */}
     <main>
       <S.MainContainer>
-        <MainInfo />
+        {/* <MainInfo /> */}
         <Products />
-        <MyStory />
+        {/* <MyStory /> */}
       </S.MainContainer>
     </main>
-    <Footer />
+    {/* <Footer /> */}
   </>
 );

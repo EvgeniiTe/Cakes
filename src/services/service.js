@@ -1,12 +1,12 @@
 const API_STUB = "./cakes.json";
 
-export const getAllCakes = () => fetch(`${API_STUB}`)
-  .then((res) => res.json())
-  .then((data) => data.cakes);
+// export const getAllCakes = () => fetch(`${API_STUB}`)
+//   .then((res) => res.json())
+//   .then((data) => data.cakes);
 
-export const getCake = (id) => fetch(`${API_STUB}`)
-  .then((res) => res.json())
-  .then((data) => data.cakes[id]);
+// export const getCake = (id) => fetch(`${API_STUB}`)
+//   .then((res) => res.json())
+//   .then((data) => data.cakes[id]);
 
 export const getNavMain = () => fetch(`${API_STUB}`)
   .then((res) => res.json())
@@ -19,3 +19,35 @@ export const mainInfoFill = () => fetch(`${API_STUB}`)
 export const storyInfoFill = () => fetch(`${API_STUB}`)
   .then((res) => res.json())
   .then((data) => data.storyInfoFill);
+
+export const getAllCakes = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (Math.random() < 0.75) {
+        resolve(
+          fetch(`${API_STUB}`)
+          .then((res) => res.json())
+          .then((data) => data.cakes),
+        );
+      } else {
+        reject(new Error("Something bad happened with LIST"));
+      }
+    }, 1000);
+  });
+};
+
+export const getCake = (id) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (Math.random() < 0.75) {
+        resolve(
+          fetch(`${API_STUB}`)
+          .then((res) => res.json())
+          .then((data) => data.cakes[id]),
+        );
+      } else {
+        reject(new Error("Something bad happened with PRODUCT"));
+      }
+    }, 1000);
+  });
+};
