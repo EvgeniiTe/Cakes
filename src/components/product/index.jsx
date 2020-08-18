@@ -40,7 +40,7 @@ export const ProductContainer = (props) => {
   }
 
   if (error) {
-    return <ErrorIndicator />;
+    return <ErrorIndicator error={error} />;
   }
 
   return <ProductRender selectedItem={selectedItem} />;

@@ -36,7 +36,7 @@ class ProductsListContainer extends Component {
     }
 
     if (error) {
-      return <ErrorIndicator />;
+      return <ErrorIndicator error={error} />;
     }
 
     return <ProductsListRender data={products} selectItem={selectItem} />;
