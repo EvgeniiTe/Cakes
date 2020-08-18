@@ -13,34 +13,3 @@ export const withApiRequest = () => (Wrapped) => {
     );
   };
 };
-
-// export const withApiRequest = (getData, Wrapped) => {
-//   return class extends Component {
-//     state = { data: [] };
-
-//     getFunctions = {
-//       getAllCakes,
-//       getNavMain,
-//       mainInfoFill,
-//       storyInfoFill,
-//     };
-
-//     componentDidMount() {
-//       this.getInfo();
-//     }
-
-//     getInfo() {
-//       const getFunction = this.getFunctions[`${getData}`];
-
-//       getFunction().then((data) => {
-//         this.setState({ data });
-//       });
-//     }
-
-//     render() {
-//       const { data } = this.state;
-
-//       return <Wrapped response={data} />;
-//     }
-//   };
-// };

@@ -26,13 +26,6 @@ export const fetchCakes = (serviceFunctions) => () => (dispatch) => {
 };
 
 // selectProduct
-// export const productSelected = (productId) => {
-//   return {
-//     type: "PRODUCT_SELECTED",
-//     payload: productId,
-//   };
-// };
-
 export const productRequested = () => {
   return { type: "FETCH_PRODUCT_REQUEST" };
 };
