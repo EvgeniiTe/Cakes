@@ -1,10 +1,4 @@
-import React, { Component } from "react";
-// import {
-//   getAllCakes,
-//   getNavMain,
-//   mainInfoFill,
-//   storyInfoFill,
-// } from "../../services/service";
+import React from "react";
 
 import { CakesServiceConsumer } from "../service-context";
 

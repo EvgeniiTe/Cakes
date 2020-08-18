@@ -12,11 +12,11 @@ export const getNavMain = () => fetch(`${API_STUB}`)
   .then((res) => res.json())
   .then((data) => data.navMain);
 
-export const mainInfoFill = () => fetch(`${API_STUB}`)
+export const getMainInfoFill = () => fetch(`${API_STUB}`)
   .then((res) => res.json())
   .then((data) => data.mainInfoFill);
 
-export const storyInfoFill = () => fetch(`${API_STUB}`)
+export const getStoryInfoFill = () => fetch(`${API_STUB}`)
   .then((res) => res.json())
   .then((data) => data.storyInfoFill);
 

@@ -6,6 +6,6 @@ export const MainInfo = styled.section`
   padding: 25px 0;
 `;
 
-export const MyStoryLink = styled.a`
+export const MyStoryLink = styled.div`
   color: grey;
 `;

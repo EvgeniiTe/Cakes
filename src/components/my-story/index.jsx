@@ -3,6 +3,8 @@ import { ParagraphsLineByLine } from "../paragraphs-line-by-line";
 import { CreateHeading } from "../create-heading";
 import * as S from "./styled";
 import { withApiRequest } from "../hoc-helpers/withApiRequest";
+import { withWebsiteContent } from "../hoc-helpers/withWebsiteContent";
+import { compose } from "../../utils";
 
 const MyStoryRender = (props) => {
   const { response } = props;
@@ -15,4 +17,7 @@ const MyStoryRender = (props) => {
   );
 };
 
-export const MyStory = withApiRequest("storyInfoFill", MyStoryRender);
+export const MyStory = compose(
+  withApiRequest(),
+  withWebsiteContent("getStoryInfoFill")
+)(MyStoryRender);
