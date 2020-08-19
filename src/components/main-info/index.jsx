@@ -4,6 +4,8 @@ import { CreateDiv } from "../create-div";
 import { CreateHeading } from "../create-heading";
 import * as S from "./styled";
 import { withApiRequest } from "../hoc-helpers/withApiRequest";
+import { withWebsiteContent } from "../hoc-helpers/withWebsiteContent";
+import { compose } from "../../utils";
 
 const MainInfoRender = (props) => {
   const { response } = props;
@@ -21,4 +23,7 @@ const MainInfoRender = (props) => {
   );
 };
 
-export const MainInfo = withApiRequest("mainInfoFill", MainInfoRender);
+export const MainInfo = compose(
+  withApiRequest(),
+  withWebsiteContent("getMainInfoFill")
+)(MainInfoRender);

@@ -20,6 +20,11 @@ module.exports = {
   ],
   rules: {
     "linebreak-style": ["error", "windows"],
+    "react/jsx-props-no-spreading": 0,
+    "comma-dangle": ["error", {
+      "functions": "never",
+      "objects": "only-multiline",
+    }],
     "import/prefer-default-export": 0,
     "react/prop-types": 0,
     "react/state-in-constructor": 0,

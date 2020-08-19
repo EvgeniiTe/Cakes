@@ -1,60 +1,57 @@
-import React, { Component } from "react";
+import React from "react";
 
+import { connect } from "react-redux";
 import * as S from "./styled";
 
-import { getCake } from "../../services/service";
 import { DrawImage } from "../draw-image";
+import { Loader } from "../loader";
+import { ErrorIndicator } from "../error-indicator";
+import { withApiRequest } from "../hoc-helpers/withApiRequest";
+import { compose } from "../../utils";
 
 const ProductImg = { marginLeft: "auto" };
 
-export class Product extends Component {
-  state = { selectedItem: null };
+const ProductRender = ({ selectedItem: { name, description, picture } }) => {
+  return (
+    <S.Product>
+      <S.ProductContainer>
+        <S.ProductName>{name}</S.ProductName>
+        <S.ProductInfo>{description}</S.ProductInfo>
+      </S.ProductContainer>
+      <DrawImage
+        styleName={ProductImg}
+        src={picture}
+        width="600px"
+        alt={name}
+      />
+    </S.Product>
+  );
+};
 
-  componentDidMount() {
-    this.updateItem();
+export const ProductContainer = (props) => {
+  const { selectedItem, loading, error } = props;
+
+  if (selectedItem === null && loading === false && error === null) {
+    return null;
   }
 
-  componentDidUpdate(prevProps) {
-    // eslint-disable-next-line react/destructuring-assignment
-    if (this.props.itemId !== prevProps.itemId) {
-      this.updateItem();
-    }
+  if (loading) {
+    return <Loader />;
   }
 
-  updateItem() {
-    const { itemId } = this.props;
-
-    if (typeof itemId !== "number") {
-      return;
-    }
-
-    getCake(itemId).then((item) => {
-      this.setState({ selectedItem: item });
-    });
+  if (error) {
+    return <ErrorIndicator error={error} />;
   }
 
-  render() {
-    const { selectedItem } = this.state;
+  return <ProductRender selectedItem={selectedItem} />;
+};
 
-    if (!selectedItem) {
-      return null;
-    }
+const mapStateToProps = ({ productSelected }) => {
+  const { selectedItem, loading, error } = productSelected;
+  return { selectedItem, loading, error };
+};
 
-    const { name, description, picture } = selectedItem;
-
-    return (
-      <S.Product>
-        <S.ProductContainer>
-          <S.ProductName>{name}</S.ProductName>
-          <S.ProductInfo>{description}</S.ProductInfo>
-        </S.ProductContainer>
-        <DrawImage
-          styleName={ProductImg}
-          src={picture}
-          width="600px"
-          alt={name}
-        />
-      </S.Product>
-    );
-  }
-}
+export const Product = compose(
+  withApiRequest(),
+  connect(mapStateToProps)
+)(ProductContainer);

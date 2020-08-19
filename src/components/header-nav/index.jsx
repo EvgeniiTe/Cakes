@@ -1,5 +1,7 @@
 import React from "react";
 import { withApiRequest } from "../hoc-helpers/withApiRequest";
+import { withWebsiteContent } from "../hoc-helpers/withWebsiteContent";
+import { compose } from "../../utils";
 
 import * as S from "./styled";
 
@@ -21,4 +23,7 @@ const HeaderNavRender = (props) => {
   );
 };
 
-export const HeaderNav = withApiRequest("getNavMain", HeaderNavRender);
+export const HeaderNav = compose(
+  withApiRequest(),
+  withWebsiteContent("getNavMain")
+)(HeaderNavRender);
