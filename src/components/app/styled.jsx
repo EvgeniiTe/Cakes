@@ -19,11 +19,6 @@ a {
 }
 `;
 
-export const MainContainer = styled.div`
-  max-width: 1366px;
-  margin: auto;
-`;
-
 export const HeaderFooterContainer = styled.div`
   max-width: 1920px;
   display: flex;

@@ -36,6 +36,6 @@ export const updateProduct = (state, action) => {
       };
 
     default:
-      return state.selectedProduct;
+      return state.productSelected;
   }
 };
