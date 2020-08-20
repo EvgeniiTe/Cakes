@@ -36,6 +36,10 @@ export const updateProduct = (state, action) => {
       };
 
     default:
-      return state.productSelected;
+      return {
+        selectedItem: null,
+        loading: false,
+        error: null,
+      };
   }
 };
