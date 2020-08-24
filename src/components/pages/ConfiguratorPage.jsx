@@ -1,13 +1,13 @@
 import React from "react";
 import * as S from "./styled";
 
-import { MainInfo } from "../main-info";
+import { Configurator } from "../configurator";
 
 export const ConfiguratorPage = () => {
   return (
     <main>
       <S.MainContainer>
-        <MainInfo />
+        <Configurator />
       </S.MainContainer>
     </main>
   );
