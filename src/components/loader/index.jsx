@@ -1,11 +1,11 @@
 import React from "react";
-import { CircularProgress } from "@material-ui/core";
-import * as S from "./styled.jsx";
+import { Spinner } from "react-bootstrap";
+import * as S from "./styled";
 
 export const Loader = () => {
   return (
     <S.Center>
-      <CircularProgress color="secondary" />
+      <Spinner animation="border" role="status" variant="info" />
     </S.Center>
   );
 };
