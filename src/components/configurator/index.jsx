@@ -1,18 +1,23 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Form, Button, Col, Row } from "react-bootstrap";
+import * as S from "./styled";
 
-export const Configurator = () => {
+const ConfiguratorRender = ({ products }) => {
+  const listCakes = products.map((item) => {
+    const { name } = item;
+    return <option>{name}</option>;
+  });
+
   return (
-    <>
+    <S.Configurator>
       <Form>
         <Form.Label as="legend">Конфигуратор заказа</Form.Label>
 
         <Form.Group controlId="conf-form-1">
           <Form.Label>Выберете торт из списка</Form.Label>
           <Form.Control as="select" custom>
-            <option>Сделать</option>
-            <option>MAP</option>
-            <option>ТОРТОВ</option>
+            {listCakes}
           </Form.Control>
           <Form.Text className="text-muted">
             Вы можете вернуться к фотографиям тортов на главной странице
@@ -22,9 +27,9 @@ export const Configurator = () => {
         <Form.Group controlId="conf-form-2">
           <Form.Label>Количество килограмм</Form.Label>
           <Form.Control as="select" custom>
-            <option>Сделать</option>
-            <option>MAP</option>
-            <option>возможных КГ для каждого торта (всех тортов)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
           </Form.Control>
           <Form.Text className="text-muted">
             Да, есть технические ограничения по количеству килограмм. Однако, Вы
@@ -123,6 +128,12 @@ export const Configurator = () => {
           Добавить в корзину
         </Button>
       </Form>
-    </>
+    </S.Configurator>
   );
 };
+
+const mapStateToProps = ({ productsList: { products } }) => {
+  return { products };
+};
+
+export const Configurator = connect(mapStateToProps)(ConfiguratorRender);
