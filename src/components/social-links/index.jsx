@@ -10,6 +10,7 @@ export const SocialLinks = () => {
         <a
           href="https://www.instagram.com/bohemian_cakes/"
           target="_blank"
+          rel="noreferrer"
           className="social-link"
         >
           <DrawImage
@@ -18,6 +19,22 @@ export const SocialLinks = () => {
             height="40px"
             alt=""
             title="Instagram"
+          />
+        </a>
+      </S.SocialLink>
+      <S.SocialLink>
+        <a
+          href="https://t.me/Bohemian_cakes"
+          target="_blank"
+          rel="noreferrer"
+          className="social-link"
+        >
+          <DrawImage
+            className=""
+            src=".\pic\Telegram_2019_Logo.svg"
+            height="40px"
+            alt=""
+            title="Telegram"
           />
         </a>
       </S.SocialLink>
