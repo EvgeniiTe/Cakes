@@ -1,10 +1,11 @@
 import React from "react";
-import Spinner from "react-bootstrap/Spinner";
+import { Spinner } from "react-bootstrap";
+import * as S from "./styled";
 
 export const Loader = () => {
   return (
-    <Spinner animation="border" variant="primary" role="status">
-      <span className="sr-only">Loading...</span>
-    </Spinner>
+    <S.Center>
+      <Spinner animation="border" role="status" variant="info" />
+    </S.Center>
   );
 };
