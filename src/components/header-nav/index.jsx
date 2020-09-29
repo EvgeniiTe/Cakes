@@ -1,5 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { withApiRequest } from "../hoc-helpers/withApiRequest";
+import { withWebsiteContent } from "../hoc-helpers/withWebsiteContent";
+import { compose } from "../../utils";
 
 import * as S from "./styled";
 
@@ -9,7 +12,7 @@ const HeaderNavRender = (props) => {
   const navMainMap = response.map(({ navMainWord, navMainRef }) => {
     return (
       <S.Li key={navMainWord}>
-        <a href={navMainRef}>{navMainWord}</a>
+        <Link to={navMainRef}>{navMainWord}</Link>
       </S.Li>
     );
   });
@@ -21,4 +24,7 @@ const HeaderNavRender = (props) => {
   );
 };
 
-export const HeaderNav = withApiRequest("getNavMain", HeaderNavRender);
+export const HeaderNav = compose(
+  withApiRequest(),
+  withWebsiteContent("getNavMain")
+)(HeaderNavRender);

@@ -14,12 +14,16 @@ export const Ul = styled.ul`
 export const Li = styled.li`
   margin-right: 150px;
   font-size: large;
+  text-decoration: none;
+  color: #ffffff;
 
   :last-child {
     margin-right: 0;
   }
 
   :hover {
+    text-decoration: none;
+    color: #ffffff;
     transform: scale(1.2);
     transition: transform 1s ease;
   }

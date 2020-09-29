@@ -1,23 +1,19 @@
 import React from "react";
+import { Route, Switch } from "react-router-dom";
 
 import { Header } from "../header";
-import { MainInfo } from "../main-info";
-import { Products } from "../products";
-import { MyStory } from "../my-story";
 import { Footer } from "../footer";
+import { HomePage, ConfiguratorPage } from "../pages";
 import * as S from "./styled";
 
 export const App = () => (
   <>
     <S.GlobalStyle />
     <Header />
-    <main>
-      <S.MainContainer>
-        <MainInfo />
-        <Products />
-        <MyStory />
-      </S.MainContainer>
-    </main>
+    <Switch>
+      <Route path="/" component={HomePage} exact />
+      <Route path="/configurator" component={ConfiguratorPage} />
+    </Switch>
     <Footer />
   </>
 );
