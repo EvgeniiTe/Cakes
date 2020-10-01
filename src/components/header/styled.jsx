@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { HeaderFooterContainer } from "../app/styled";
 
 export const Header = styled.header`
-  padding: 35px 0 0 0;
+  padding: 0 0 35px 0;
   background-color: #c2c3d5;
   margin: 0;
 `;

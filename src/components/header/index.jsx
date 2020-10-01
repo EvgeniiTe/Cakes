@@ -2,12 +2,12 @@ import React from "react";
 
 import * as S from "./styled";
 
-import { HeaderTop } from "../header-top";
+import { HeaderPerf } from "../header-perf";
 import { HeaderNav } from "../header-nav";
 
 export const Header = () => (
   <S.Header>
-    <HeaderTop />
     <HeaderNav />
+    <HeaderPerf />
   </S.Header>
 );
