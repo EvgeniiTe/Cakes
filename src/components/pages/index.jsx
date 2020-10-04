@@ -1,4 +1,5 @@
 import { HomePage } from "./HomePage";
 import { ConfiguratorPage } from "./ConfiguratorPage";
+import { ProductsPage } from "./ProductsPage";
 
-export { HomePage, ConfiguratorPage };
+export { HomePage, ConfiguratorPage, ProductsPage };
