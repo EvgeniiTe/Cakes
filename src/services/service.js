@@ -24,6 +24,10 @@ export const getOrderInfoFill = () => fetch(`${API_STUB}`)
   .then((res) => res.json())
   .then((data) => data.orderInfoFill);
 
+export const getProductsInfoFill = () => fetch(`${API_STUB}`)
+  .then((res) => res.json())
+  .then((data) => data.productsInfoFill);
+
 export const getAllCakes = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {

@@ -12,7 +12,7 @@ const OrderInfoRender = (props) => {
 
   return (
     <S.OrderInfo>
-      <CreateHeading h="h1" text="Заказ торта" />
+      <CreateHeading h="h2" text="Заказ торта" />
       <ParagraphsLineByLine data={response} />
     </S.OrderInfo>
   );

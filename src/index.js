@@ -13,7 +13,8 @@ import {
   getNavMain,
   getMainInfoFill,
   getStoryInfoFill,
-  getOrderInfoFill
+  getOrderInfoFill,
+  getProductsInfoFill
 } from "./services/service";
 
 const serviceFunctions = {
@@ -23,6 +24,7 @@ const serviceFunctions = {
   getMainInfoFill,
   getStoryInfoFill,
   getOrderInfoFill,
+  getProductsInfoFill,
 };
 
 ReactDOM.render(
