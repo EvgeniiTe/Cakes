@@ -1,34 +1,24 @@
 import React from "react";
 import * as S from "./styled";
 
-export const OrderInfo = () => {
+import { CreateHeading } from "../create-heading";
+import { ParagraphsLineByLine } from "../paragraphs-line-by-line";
+import { withApiRequest } from "../hoc-helpers/withApiRequest";
+import { withWebsiteContent } from "../hoc-helpers/withWebsiteContent";
+import { compose } from "../../utils";
+
+const OrderInfoRender = (props) => {
+  const { response } = props;
+
   return (
     <S.OrderInfo>
-      <div>
-        <p>Заказ торта</p>
-
-        <p>
-          Торты заказываются размером от 2 до 4 кг со временем готовности в
-          течение 4 дней.
-        </p>
-
-        <p>
-          Самые свежие фотографии, а также информация о продуктах для
-          изготовления этих тортов, представлена в Инстаграм.
-        </p>
-
-        <p>Сейчас ведётся работа над добавлением в ассортимент капкейков.</p>
-
-        <p>
-          Для удобства Вы можете заполнить конфигуратор в форме ниже, а затем
-          связаться через чат в Телеграм (перейти по ссылке)
-        </p>
-
-        <p>
-          Также вы можете посмотреть описания и фотографии тортов в блоке
-          ассортимент.
-        </p>
-      </div>
+      <CreateHeading h="h1" text="Заказ торта" />
+      <ParagraphsLineByLine data={response} />
     </S.OrderInfo>
   );
 };
+
+export const OrderInfo = compose(
+  withApiRequest(),
+  withWebsiteContent("getOrderInfoFill")
+)(OrderInfoRender);
