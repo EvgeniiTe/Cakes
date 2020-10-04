@@ -1,15 +1,12 @@
 import styled from "styled-components";
 
-export const SocialLinks = styled.div`
-  display: flex;
-  flex-direction: row-reverse;
-`;
-
 export const SocialLink = styled.div`
-  padding-left: 1rem;
+  padding: 1rem;
+  text-align: center;
 
   :hover {
     transform: scale(1.2);
+    transform-origin: 50% 50%;
     transition: transform 1s ease;
   }
 `;

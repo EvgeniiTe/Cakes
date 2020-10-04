@@ -23,7 +23,7 @@ export const HeaderFooterContainer = styled.div`
   max-width: 1920px;
   display: flex;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 1rem;
   color: #ffffff;
   margin: auto;
 `;

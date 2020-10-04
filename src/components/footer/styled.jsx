@@ -10,11 +10,14 @@ export const Footer = styled.footer`
 `;
 
 export const FooterContainer = styled(HeaderFooterContainer)`
-  align-items: center;
+  
 `;
 
 export const FooterLogo = styled(FlexItem)`
   text-align: start;
+  @media (max-width: 992px) {
+    text-align: center;
+  }
 `;
 
 export const FooterName = styled(FlexItem)`
