@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as S from "./styled";
@@ -14,14 +15,22 @@ const ProductsListRender = ({ data, selectItem }) => {
   const items = data.map((item) => {
     const { id, name, picture } = item;
     return (
-      <S.Item key={name} onClick={() => selectItem(id)}>
-        <DrawImage src={picture} width="180px" alt={name} />
-        <S.ItemName>{name}</S.ItemName>
-      </S.Item>
+      <Col lg="auto" md="4" xs="12">
+        <S.Item key={name} onClick={() => selectItem(id)}>
+          <DrawImage src={picture} width="180px" alt={name} />
+          <S.ItemName>{name}</S.ItemName>
+        </S.Item>
+      </Col>
     );
   });
 
-  return <S.Items>{items}</S.Items>;
+  return (
+    <S.Items>
+      <Container fluid>
+        <Row>{items}</Row>
+      </Container>
+    </S.Items>
+  );
 };
 class ProductsListContainer extends Component {
   componentDidMount() {
