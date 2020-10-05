@@ -1,6 +1,7 @@
 import React from "react";
 
 import { connect } from "react-redux";
+import { Container, Row, Col } from "react-bootstrap";
 import * as S from "./styled";
 
 import { DrawImage } from "../draw-image";
@@ -9,21 +10,32 @@ import { ErrorIndicator } from "../error-indicator";
 import { withApiRequest } from "../hoc-helpers/withApiRequest";
 import { compose } from "../../utils";
 
-const ProductImg = { marginLeft: "auto" };
+// const ProductImg = { marginLeft: "auto" };
 
 const ProductRender = ({ selectedItem: { name, description, picture } }) => {
   return (
     <S.Product>
-      <S.ProductContainer>
-        <S.ProductName>{name}</S.ProductName>
-        <S.ProductInfo>{description}</S.ProductInfo>
-      </S.ProductContainer>
-      <DrawImage
-        styleName={ProductImg}
-        src={picture}
-        width="600px"
-        alt={name}
-      />
+      <Container fluid style={{ padding: "0" }}>
+        <Row style={{ alignItems: "center" }}>
+          <Col xl="6" lg="12">
+            <S.ProductTextContainer>
+              <S.ProductName>{name}</S.ProductName>
+              <S.ProductInfo>{description}</S.ProductInfo>
+            </S.ProductTextContainer>
+          </Col>
+
+          <Col xl="6" lg="12">
+            <S.ProductImg>
+              <DrawImage
+                src={picture}
+                width="100%"
+                alt={name}
+              />
+            </S.ProductImg>
+          </Col>
+
+        </Row>
+      </Container>
     </S.Product>
   );
 };
