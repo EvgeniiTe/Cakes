@@ -1,6 +1,5 @@
 {
-  "cakes": [
-    {
+  "cakes": [{
       "id": 0,
       "name": "Трюфель",
       "priceKg": "1500",
@@ -43,18 +42,20 @@
       "picture": "./pic/Шоколадное мороженое.jpg"
     }
   ],
-  "navMain": [
-    {
+  "navMain": [{
       "navMainWord": "Начало",
-      "navMainRef": "/"
+      "navMainRef": "/",
+      "navPageRef": "start"
     },
     {
       "navMainWord": "Ассортимент",
-      "navMainRef": "/products"
+      "navMainRef": "/",
+      "navPageRef": "products"
     },
     {
       "navMainWord": "Заказать",
-      "navMainRef": "/configurator"
+      "navMainRef": "/configurator",
+      "navPageRef": "start"
     }
   ],
   "mainInfoFill": [

@@ -16,12 +16,10 @@ export const TransparentContainer = styled.div`
 const appearance = keyframes`
   from {
     opacity: 0;
-    transform: translate(0%, 0%);
   }
 
   to {
     opacity: 1;
-    transform: translate(-50%, -50%);
   }
 `;
 

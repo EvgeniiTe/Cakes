@@ -1,4 +1,5 @@
 import React from "react";
+import { Link as ScrollLink } from "react-scroll";
 import { Navbar, Nav } from "react-bootstrap";
 import { withApiRequest } from "../hoc-helpers/withApiRequest";
 import { withWebsiteContent } from "../hoc-helpers/withWebsiteContent";
@@ -9,10 +10,14 @@ import * as S from "./styled";
 const HeaderNavRender = (props) => {
   const { response } = props;
 
-  const navMainMap = response.map(({ navMainWord, navMainRef }) => {
+  const navMainMap = response.map(({ navMainWord, navMainRef, navPageRef }) => {
     return (
       <Nav.Link key={navMainWord}>
-        <S.StyledLink to={navMainRef}>{navMainWord}</S.StyledLink>
+        <ScrollLink to={navPageRef} smooth offset={-100} duration={500}>
+          <S.StyledLink to={navMainRef}>
+            {navMainWord}
+          </S.StyledLink>
+        </ScrollLink>
       </Nav.Link>
     );
   });

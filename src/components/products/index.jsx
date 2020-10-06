@@ -1,4 +1,5 @@
 import React from "react";
+import { Element as ScrollToEl } from "react-scroll";
 import * as S from "./styled";
 
 import { ProductsList } from "../products-list";
@@ -14,10 +15,14 @@ const ProductsRender = (props) => {
 
   return (
     <S.Products>
-      <CreateHeading h="h2" text="Ассортимент" />
+      <ScrollToEl name="products">
+        <CreateHeading h="h2" text="Ассортимент" />
+      </ScrollToEl>
       <ParagraphsLineByLine data={response} />
       <ProductsList />
-      <Product />
+      <ScrollToEl name="product">
+        <Product />
+      </ScrollToEl>
     </S.Products>
   );
 };
