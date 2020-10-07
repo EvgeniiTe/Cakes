@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
-    font-family: Georgia, 'Times New Roman', Times, sans-serif;
+    font-family: 'Open Sans', 'Times New Roman', sans-serif;
 }
 
 main {

@@ -11,7 +11,7 @@ const MyStoryRender = (props) => {
 
   return (
     <S.Story>
-      <CreateHeading h="h2" text="Моя история" />
+      <CreateHeading h="h2" text="МОЯ ИСТОРИЯ" />
       <ParagraphsLineByLine data={response} />
     </S.Story>
   );

@@ -3,7 +3,7 @@ import { SocialLinks } from "../social-links";
 import { Logo } from "../logo";
 
 const name = () => {
-  return <p>Bohemian Cakes</p>;
+  return <p>BOHEMIAN CAKES</p>;
 };
 
 export const headerElements = [

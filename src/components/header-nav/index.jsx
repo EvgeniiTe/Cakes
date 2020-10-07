@@ -25,7 +25,7 @@ const HeaderNavRender = (props) => {
   return (
     <S.Nav>
       <Navbar bg="light" variant="light" expand="lg" fixed="top">
-        <Navbar.Brand href="/">Bohemian Cakes</Navbar.Brand>
+        <Navbar.Brand href="/">BOHEMIAN CAKES</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">{navMainMap}</Nav>

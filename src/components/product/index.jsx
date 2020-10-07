@@ -13,6 +13,7 @@ import { PopupImg } from "../popup-img";
 // const ProductImg = { marginLeft: "auto" };
 
 const ProductRender = ({ selectedItem: { name, description, picture } }) => {
+  const upperName = name.toUpperCase();
   return (
     <>
       <S.Product>
@@ -20,7 +21,7 @@ const ProductRender = ({ selectedItem: { name, description, picture } }) => {
           <Row style={{ alignItems: "center" }}>
             <Col xl="6" lg="12">
               <S.ProductTextContainer>
-                <S.ProductName>{name}</S.ProductName>
+                <S.ProductName>{upperName}</S.ProductName>
                 <S.ProductInfo>{description}</S.ProductInfo>
               </S.ProductTextContainer>
             </Col>

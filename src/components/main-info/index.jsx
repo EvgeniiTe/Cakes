@@ -11,7 +11,7 @@ const MainInfoRender = (props) => {
 
   return (
     <S.MainInfo>
-      <CreateHeading h="h1" text="Торты на заказ" />
+      <CreateHeading h="h1" text="ТОРТЫ НА ЗАКАЗ" />
       <ParagraphsLineByLine data={response} />
     </S.MainInfo>
   );

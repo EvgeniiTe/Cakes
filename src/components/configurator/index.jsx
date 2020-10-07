@@ -91,7 +91,7 @@ class ConfForm extends Component {
 
     return (
       <Form onSubmit={this.handleSubmit}>
-        <Form.Label as="legend">Конфигуратор заказа</Form.Label>
+        <Form.Label as="legend">КОНФИГУРАТОР ЗАКАЗА</Form.Label>
 
         <Form.Group controlId="cake">
           <Form.Label>Выберите торт из списка</Form.Label>
@@ -236,7 +236,7 @@ class ConfForm extends Component {
         </Form.Group>
 
         <Button variant="primary" type="submit">
-          Добавить в корзину
+          ЗАКАЗАТЬ
         </Button>
       </Form>
     );

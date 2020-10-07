@@ -16,7 +16,7 @@ const ProductsRender = (props) => {
   return (
     <S.Products>
       <ScrollToEl name="products">
-        <CreateHeading h="h2" text="Ассортимент" />
+        <CreateHeading h="h2" text="АССОРТИМЕНТ" />
       </ScrollToEl>
       <ParagraphsLineByLine data={response} />
       <ProductsList />
