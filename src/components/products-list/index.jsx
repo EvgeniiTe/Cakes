@@ -17,7 +17,7 @@ const ProductsListRender = ({ data, selectItem }) => {
     const { id, name, picture } = item;
     return (
       <Col lg="auto" md="4" xs="12">
-        <ScrollLink to="product" smooth duration={500}>
+        <ScrollLink to="product" smooth offset={-100} duration={500}>
           <S.Item key={name} onClick={() => selectItem(id)}>
             <DrawImage src={picture} width="180px" alt={name} />
             <S.ItemName>{name}</S.ItemName>
