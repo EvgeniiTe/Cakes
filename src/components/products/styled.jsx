@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const Products = styled.section`
-  padding: 1rem;
+import { whiteDivWithBorder } from "../app/styled";
+
+export const Products = styled(whiteDivWithBorder)`
   text-align: justify;
-  background-color: #ffdfc0;
 `;

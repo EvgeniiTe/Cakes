@@ -4,7 +4,7 @@ import { FlexItem } from "../header/styled";
 
 export const Footer = styled.footer`
   padding: 20px 0;
-  background-color: #c2c3d5;
+  background-color: #116b4f;
   margin: 0;
   text-align: center;
 `;

@@ -10,7 +10,7 @@ body {
 }
 
 main {
-    background-color: aquamarine;
+    background-color: #f8f9fa;
 }
 
 a {
@@ -26,4 +26,12 @@ export const HeaderFooterContainer = styled.div`
   padding: 0 1rem;
   color: #ffffff;
   margin: auto;
+`;
+
+export const whiteDivWithBorder = styled.div`
+  background-color: #fff;
+  border: 1px solid #d7e6e6;
+  border-radius: 0.5rem;
+  margin: 0 0 1rem;
+  padding: 1rem;
 `;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
+import { whiteDivWithBorder } from "../app/styled";
 
-export const OrderInfo = styled.div`
-  background-color: blue;
-  margin: 0;
+export const OrderInfo = styled(whiteDivWithBorder)`
+ 
 `;

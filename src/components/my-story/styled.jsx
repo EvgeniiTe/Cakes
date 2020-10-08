@@ -1,7 +1,6 @@
 import styled from "styled-components";
+import { whiteDivWithBorder } from "../app/styled";
 
-export const Story = styled.section`
-  background-color: blanchedalmond;
-  margin: 0;
-  padding: 1rem;
+export const Story = styled(whiteDivWithBorder)`
+  text-align: center;
 `;

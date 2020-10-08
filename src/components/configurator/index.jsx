@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import * as S from "./styled";
+import { CreateHeading } from "../create-heading";
 
 const ConfiguratorRender = ({ products }) => {
   const listCakes = products.map((item) => {
@@ -90,155 +91,159 @@ class ConfForm extends Component {
     } = this.state;
 
     return (
-      <Form onSubmit={this.handleSubmit}>
-        <Form.Label as="legend">КОНФИГУРАТОР ЗАКАЗА</Form.Label>
+      <>
 
-        <Form.Group controlId="cake">
-          <Form.Label>Выберите торт из списка</Form.Label>
-          <Form.Control
-            as="select"
-            custom
-            value={cake}
-            onChange={this.handleChangeSelect}
-          >
-            <option>Выберите торт из списка</option>
-            {listCakes}
-          </Form.Control>
-          <Form.Text className="text-muted">
-            Вы можете вернуться к фотографиям тортов на главной странице
-          </Form.Text>
-        </Form.Group>
+        <CreateHeading h="h2" text="КОНФИГУРАТОР ЗАКАЗА" />
 
-        <Form.Group controlId="quantityKg">
-          <Form.Label>Количество килограмм</Form.Label>
-          <Form.Control
-            as="select"
-            custom
-            value={quantityKg}
-            onChange={this.handleChangeSelect}
-          >
-            <option>Количество килограмм</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-          </Form.Control>
-          <Form.Text className="text-muted">
-            Да, есть технические ограничения по количеству килограмм. Однако, Вы
-            всегда можете заказать капкейки или же несколько тортов.
-          </Form.Text>
-        </Form.Group>
+        <Form onSubmit={this.handleSubmit}>
 
-        <Form.Group controlId="quantityCakes">
-          <Form.Label>Количество тортов</Form.Label>
-          <Form.Control
-            as="select"
-            custom
-            value={quantityCakes}
-            onChange={this.handleChangeSelect}
-          >
-            <option>Количество тортов</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-          </Form.Control>
-          <Form.Text className="text-muted">
-            Да, есть технические ограничения по количеству тортов на один заказ.
-          </Form.Text>
-        </Form.Group>
+          <Form.Group controlId="cake">
+            <Form.Label>Выберите торт из списка</Form.Label>
+            <Form.Control
+              as="select"
+              custom
+              value={cake}
+              onChange={this.handleChangeSelect}
+            >
+              <option>Выберите торт из списка</option>
+              {listCakes}
+            </Form.Control>
+            <Form.Text className="text-muted">
+              Вы можете вернуться к фотографиям тортов на главной странице
+            </Form.Text>
+          </Form.Group>
 
-        <Form.Group controlId="decoration">
-          <Form.Label>
-            Вы можете заказать дополнительный декор к торту
-          </Form.Label>
+          <Form.Group controlId="quantityKg">
+            <Form.Label>Количество килограмм</Form.Label>
+            <Form.Control
+              as="select"
+              custom
+              value={quantityKg}
+              onChange={this.handleChangeSelect}
+            >
+              <option>Количество килограмм</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </Form.Control>
+            <Form.Text className="text-muted">
+              Да, есть технические ограничения по количеству килограмм. Однако, Вы
+              всегда можете заказать капкейки или же несколько тортов.
+            </Form.Text>
+          </Form.Group>
 
-          <Row>
-            <Col sm={4}>
-              <Form.Group controlId="berries">
-                <Form.Label>Ягоды:</Form.Label>
-                <Col>
-                  <Form.Check
-                    type="checkbox"
-                    label="Клубника"
-                    name="strawberry"
-                    id="strawberry"
-                    checked={strawberry}
-                    onChange={this.handleChangeCheckboxes}
+          <Form.Group controlId="quantityCakes">
+            <Form.Label>Количество тортов</Form.Label>
+            <Form.Control
+              as="select"
+              custom
+              value={quantityCakes}
+              onChange={this.handleChangeSelect}
+            >
+              <option>Количество тортов</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </Form.Control>
+            <Form.Text className="text-muted">
+              Да, есть технические ограничения по количеству тортов на один заказ.
+            </Form.Text>
+          </Form.Group>
+
+          <Form.Group controlId="decoration">
+            <Form.Label>
+              Вы можете заказать дополнительный декор к торту
+            </Form.Label>
+
+            <Row>
+              <Col sm={4}>
+                <Form.Group controlId="berries">
+                  <Form.Label>Ягоды:</Form.Label>
+                  <Col>
+                    <Form.Check
+                      type="checkbox"
+                      label="Клубника"
+                      name="strawberry"
+                      id="strawberry"
+                      checked={strawberry}
+                      onChange={this.handleChangeCheckboxes}
+                    />
+                    <Form.Check
+                      type="checkbox"
+                      label="Голубика"
+                      name="blueberry"
+                      id="blueberry"
+                      checked={blueberry}
+                      onChange={this.handleChangeCheckboxes}
+                    />
+                    <Form.Check
+                      type="checkbox"
+                      label="Вишня"
+                      name="cherry"
+                      id="cherry"
+                      checked={cherry}
+                      onChange={this.handleChangeCheckboxes}
+                    />
+                  </Col>
+                </Form.Group>
+              </Col>
+
+              <Col sm={4}>
+                <Form.Group controlId="tempChocolate">
+                  <Form.Label>Темперированный шоколад:</Form.Label>
+                  <Col>
+                    <Form.Check
+                      type="checkbox"
+                      label="Шарики"
+                      name="balloons"
+                      id="balloons"
+                      checked={balloons}
+                      onChange={this.handleChangeCheckboxes}
+                    />
+                    <Form.Check
+                      type="checkbox"
+                      label="Плоские фигурки"
+                      name="flatFig"
+                      id="flatFig"
+                      checked={flatFig}
+                      onChange={this.handleChangeCheckboxes}
+                    />
+                  </Col>
+                </Form.Group>
+              </Col>
+
+              <Col sm={4}>
+                <Form.Group controlId="lettering">
+                  <Form.Label>Надпись на торте:</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Ограничение 30 символов"
+                    value={lettering}
+                    onChange={this.handleChangeText}
                   />
-                  <Form.Check
-                    type="checkbox"
-                    label="Голубика"
-                    name="blueberry"
-                    id="blueberry"
-                    checked={blueberry}
-                    onChange={this.handleChangeCheckboxes}
-                  />
-                  <Form.Check
-                    type="checkbox"
-                    label="Вишня"
-                    name="cherry"
-                    id="cherry"
-                    checked={cherry}
-                    onChange={this.handleChangeCheckboxes}
-                  />
-                </Col>
-              </Form.Group>
-            </Col>
+                </Form.Group>
+              </Col>
+            </Row>
+          </Form.Group>
 
-            <Col sm={4}>
-              <Form.Group controlId="tempChocolate">
-                <Form.Label>Темперированный шоколад:</Form.Label>
-                <Col>
-                  <Form.Check
-                    type="checkbox"
-                    label="Шарики"
-                    name="balloons"
-                    id="balloons"
-                    checked={balloons}
-                    onChange={this.handleChangeCheckboxes}
-                  />
-                  <Form.Check
-                    type="checkbox"
-                    label="Плоские фигурки"
-                    name="flatFig"
-                    id="flatFig"
-                    checked={flatFig}
-                    onChange={this.handleChangeCheckboxes}
-                  />
-                </Col>
-              </Form.Group>
-            </Col>
+          <Form.Group controlId="getPhoto">
+            <Form.Label>Получить фото торта на память</Form.Label>
+            <Form.Check
+              type="checkbox"
+              label="Получить"
+              name="getPhoto"
+              id="getPhoto"
+              checked={getPhoto}
+              onChange={this.handleChangeCheckboxes}
+            />
+          </Form.Group>
 
-            <Col sm={4}>
-              <Form.Group controlId="lettering">
-                <Form.Label>Надпись на торте:</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Ограничение 30 символов"
-                  value={lettering}
-                  onChange={this.handleChangeText}
-                />
-              </Form.Group>
-            </Col>
-          </Row>
-        </Form.Group>
-
-        <Form.Group controlId="getPhoto">
-          <Form.Label>Получить фото торта на память</Form.Label>
-          <Form.Check
-            type="checkbox"
-            label="Получить"
-            name="getPhoto"
-            id="getPhoto"
-            checked={getPhoto}
-            onChange={this.handleChangeCheckboxes}
-          />
-        </Form.Group>
-
-        <Button variant="primary" type="submit">
-          ЗАКАЗАТЬ
-        </Button>
-      </Form>
+          <Button variant="primary" type="submit">
+            ЗАКАЗАТЬ
+          </Button>
+        </Form>
+      </>
     );
   }
 }
