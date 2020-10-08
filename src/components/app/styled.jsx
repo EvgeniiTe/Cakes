@@ -2,7 +2,7 @@ import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 * {
-    box-sizing: padding-box;
+    box-sizing: border-box;
 }
 
 body {
