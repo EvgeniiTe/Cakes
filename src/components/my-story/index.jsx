@@ -1,18 +1,16 @@
 import React from "react";
-import { ParagraphsLineByLine } from "../paragraphs-line-by-line";
 import { CreateHeading } from "../create-heading";
 import * as S from "./styled";
 import { withApiRequest } from "../hoc-helpers/withApiRequest";
 import { withWebsiteContent } from "../hoc-helpers/withWebsiteContent";
 import { compose } from "../../utils";
+import { AbstractsLineByLine } from "../abstracts-line-by-line";
 
-const MyStoryRender = (props) => {
-  const { response } = props;
-
+const MyStoryRender = ({ response }) => {
   return (
     <S.Story>
-      <CreateHeading h="h2" text="МОЯ ИСТОРИЯ" />
-      <ParagraphsLineByLine data={response} />
+      <CreateHeading h="h2" text="ПОДРОБНЕЕ О КОНДИТЕРСКОЙ" />
+      <AbstractsLineByLine data={response} />
     </S.Story>
   );
 };
