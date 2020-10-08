@@ -24,7 +24,7 @@ const HeaderNavRender = (props) => {
 
   return (
     <S.Nav>
-      <Navbar bg="light" variant="light" expand="lg" fixed="top">
+      <Navbar bg="light" variant="light" expand="lg" fixed="top" style={{ "box-shadow": "0 1px 7px #909090" }}>
         <Navbar.Brand href="/">BOHEMIAN CAKES</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

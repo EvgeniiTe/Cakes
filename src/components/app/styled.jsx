@@ -34,4 +34,5 @@ export const whiteDivWithBorder = styled.div`
   border-radius: 0.5rem;
   margin: 0 0 1rem;
   padding: 1rem;
+  // box-shadow: 0 1px 10px #909090;
 `;
