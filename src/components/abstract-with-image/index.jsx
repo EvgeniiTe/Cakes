@@ -8,12 +8,12 @@ import { DrawImage } from "../draw-image";
 export const AbstractWithImage = ({ heading, text, image }) => {
   return (
     <S.AbstractWithImage>
-      <Container fluid>
+      <Container>
         <Row>
-          <Col lg={{ span: 2, offset: 3 }}>
+          <Col xs="3">
             <DrawImage src={image} />
           </Col>
-          <Col lg={{ span: 4 }}>
+          <Col xs="9">
             <Row>
               <CreateHeading h="h5" text={heading} />
             </Row>
