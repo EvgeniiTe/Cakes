@@ -1,18 +1,18 @@
 import React from "react";
 
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import { Container, Row, Col } from "react-bootstrap";
 import * as S from "./styled";
-
+import { popupOpen } from "../../actions";
 import { DrawImage } from "../draw-image";
 import { Loader } from "../loader";
 import { ErrorIndicator } from "../error-indicator";
-import { compose } from "../../utils";
 import { PopupImg } from "../popup-img";
 
 // const ProductImg = { marginLeft: "auto" };
 
-const ProductRender = ({ selectedItem: { name, description, picture } }) => {
+const ProductRender = ({ selectedItem: { name, description, picture }, openImg }) => {
   const upperName = name.toUpperCase();
   return (
     <>
@@ -27,7 +27,7 @@ const ProductRender = ({ selectedItem: { name, description, picture } }) => {
             </Col>
 
             <Col xl="6" lg="12">
-              <S.ProductImg>
+              <S.ProductImg onClick={() => openImg()}>
                 <DrawImage
                   src={picture}
                   width="100%"
@@ -44,9 +44,7 @@ const ProductRender = ({ selectedItem: { name, description, picture } }) => {
   );
 };
 
-export const ProductContainer = (props) => {
-  const { selectedItem, loading, error } = props;
-
+export const ProductContainer = ({ selectedItem, loading, error, openImg }) => {
   if (selectedItem === null && loading === false && error === null) {
     return null;
   }
@@ -59,7 +57,7 @@ export const ProductContainer = (props) => {
     return <ErrorIndicator error={error} />;
   }
 
-  return <ProductRender selectedItem={selectedItem} />;
+  return <ProductRender selectedItem={selectedItem} openImg={openImg} />;
 };
 
 const mapStateToProps = ({ productSelected }) => {
@@ -67,6 +65,11 @@ const mapStateToProps = ({ productSelected }) => {
   return { selectedItem, loading, error };
 };
 
-export const Product = compose(
-  connect(mapStateToProps)
-)(ProductContainer);
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(
+    { openImg: popupOpen },
+    dispatch
+  );
+};
+
+export const Product = connect(mapStateToProps, mapDispatchToProps)(ProductContainer);

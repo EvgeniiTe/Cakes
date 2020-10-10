@@ -25,7 +25,7 @@ export const Product = styled.article`
   
   /* xs-размер (<=575px) */
   @media (max-width: 575px) {
-    width: 300px;
+    width: 280px;
   }
 `;
 
@@ -49,4 +49,5 @@ export const ProductImg = styled.div`
   margin: 0 0 0 auto;
   text-align: right;
   width: 100%;
+  cursor: pointer;
 `;
