@@ -71,22 +71,22 @@
     {
       "storyInfoHead": "ТОЛЬКО НАТУРАЛЬНЫЕ ИНГРЕДИЕНТЫ",
       "storyInfoText": "Маргарину в наших тортах не место, искусственным ингредиентам тоже",
-      "storyImageRef": "./pic/"
+      "storyImageRef": "./pic/лого ингредиенты.png"
     },
     {
       "storyInfoHead": "СОБСТВЕННАЯ РЕЦЕПТУРА",
       "storyInfoText": "Уникальный вкус, тщательно выверенные пропорции",
-      "storyImageRef": "./pic/"
+      "storyImageRef": "./pic/лого отзывы.png"
     },
     {
       "storyInfoHead": "ГИБКАЯ КОНФИГУРАЦИЯ",
       "storyInfoText": "Возможность создать собственную конфигурацию торта",
-      "storyImageRef": "./pic/"
+      "storyImageRef": "./pic/лого начинки.png"
     },
     {
       "storyInfoHead": "ФОТО НА ПАМЯТЬ",
       "storyInfoText": "Вы сможете сохранить себе фото на память, а также увидеть готовый заказ перед доставкой",
-      "storyImageRef": "./pic/"
+      "storyImageRef": "./pic/лого цены.png"
     }
   ],
   "orderInfoFill": [

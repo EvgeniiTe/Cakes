@@ -10,15 +10,15 @@ export const AbstractWithImage = ({ heading, text, image }) => {
     <S.AbstractWithImage>
       <Container>
         <Row>
-          <Col xs="3">
-            <DrawImage src={image} />
+          <Col sm="3" xs="12">
+            <DrawImage src={image} width="60px" />
           </Col>
-          <Col xs="9">
-            <Row>
+          <Col sm="9" xs="12">
+            <Row style={{ justifyContent: "center" }}>
               <CreateHeading h="h5" text={heading} />
             </Row>
             <Row>
-              <p style={{ textAlign: "left" }}>{text}</p>
+              <p style={{ textAlign: "justify" }}>{text}</p>
             </Row>
           </Col>
         </Row>
