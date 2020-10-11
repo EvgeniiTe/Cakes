@@ -51,8 +51,8 @@
     },
     {
       "navMainWord": "Ассортимент",
-      "navMainRef": "/",
-      "navPageRef": "products"
+      "navMainRef": "/products",
+      "navPageRef": "start"
     },
     {
       "navMainWord": "Заказать",
