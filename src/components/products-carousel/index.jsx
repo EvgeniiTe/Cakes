@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import Slider from "react-slick";
@@ -19,16 +18,15 @@ const ProductsCarouselRender = ({ data, selectItem, sliderSettings }) => {
       <div>
 
         <S.StyledLink key={name} to="/products" onClick={() => selectItem(id)}>
-          <DrawImage src={picture} width="100%" height="100px" alt={name} />
+
+          <DrawImage src={picture} width="100%" height="500px" alt={name} />
         </S.StyledLink>
       </div>
     );
   });
 
   return (
-  // <S.Items>
     <Slider {...sliderSettings}>{items}</Slider>
-  // </S.Items>
   );
 };
 class ProductsCarouselContainer extends Component {
@@ -43,7 +41,7 @@ class ProductsCarouselContainer extends Component {
     const sliderSettings = {
       dots: true,
       infinite: true,
-      slidesToShow: 3,
+      slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 2000,
@@ -51,19 +49,21 @@ class ProductsCarouselContainer extends Component {
     };
 
     if (loading) {
-      return <Loader />;
+      return <S.ProductsCarousel><Loader /></S.ProductsCarousel>;
     }
 
     if (error) {
-      return <ErrorIndicator error={error} />;
+      return <S.ProductsCarousel><ErrorIndicator error={error} /></S.ProductsCarousel>;
     }
 
     return (
-      <ProductsCarouselRender
-        data={products}
-        selectItem={selectItem}
-        sliderSettings={sliderSettings}
-      />
+      <S.ProductsCarousel>
+        <ProductsCarouselRender
+          data={products}
+          selectItem={selectItem}
+          sliderSettings={sliderSettings}
+        />
+      </S.ProductsCarousel>
     );
   }
 }
