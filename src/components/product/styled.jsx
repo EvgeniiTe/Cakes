@@ -1,12 +1,11 @@
 import styled from "styled-components";
+import { whiteDivWithBorder } from "../app/styled";
 
-export const Product = styled.article`
-  background-color: #f4ebe2;
-  border: 4px solid #dedede;
-  border-radius: 2rem;
-  overflow: hidden;
+export const Product = styled(whiteDivWithBorder)`
+  background-color: #f8f9fa;
   margin: 0 auto;
   max-width: 1200px;
+  box-shadow: 0 1px 10px #909090;
   
   /* lg-размер (<=1199px) */
   @media (max-width: 1199px) {

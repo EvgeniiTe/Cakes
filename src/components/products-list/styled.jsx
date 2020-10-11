@@ -1,20 +1,21 @@
 import styled from "styled-components";
+import { whiteDivWithBorder } from "../app/styled";
 
 export const Items = styled.div`
   margin: 0;
   padding: 2rem;
 `;
 
-export const Item = styled.div`
+export const Item = styled(whiteDivWithBorder)`
   width: 180px;
   height: 240px;
-  border: 4px solid #dedede;
-  border-radius: 2rem;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  padding: 0;
   margin: 2rem auto;
+  box-shadow: 0 1px 10px #909090;
 
   :hover {
     transform: scale(1.2);
