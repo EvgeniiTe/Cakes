@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { whiteDivWithBorder } from "../app/styled";
+import { DivWithBorder, backgroundMainColor, boxShadowMain } from "../app/styled";
 
-export const Product = styled(whiteDivWithBorder)`
-  background-color: #f8f9fa;
+export const Product = styled(DivWithBorder)`
+  background-color: ${backgroundMainColor};
   margin: 0 auto;
   max-width: 1200px;
-  box-shadow: 0 1px 10px #909090;
+  box-shadow: ${boxShadowMain};
   
   /* lg-размер (<=1199px) */
   @media (max-width: 1199px) {
@@ -36,7 +36,7 @@ export const ProductTextContainer = styled.div`
 `;
 
 export const ProductName = styled.h2`
-  color: #123456;
+
 `;
 
 export const ProductInfo = styled.p`

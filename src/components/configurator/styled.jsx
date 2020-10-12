@@ -1,11 +1,6 @@
 import styled from "styled-components";
-import { Form } from "react-bootstrap";
-import { whiteDivWithBorder } from "../app/styled";
+import { WhiteDivWithBorder } from "../app/styled";
 
-export const Configurator = styled(whiteDivWithBorder)`
+export const Configurator = styled(WhiteDivWithBorder)`
  
-`;
-
-export const FormControl = styled(Form.Control)`
-    border-top: 0;
 `;

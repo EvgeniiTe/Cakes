@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { whiteDivWithBorder } from "../app/styled";
+import { WhiteDivWithBorder, boxShadowMain } from "../app/styled";
 
 export const Items = styled.div`
   margin: 0;
   padding: 2rem;
 `;
 
-export const Item = styled(whiteDivWithBorder)`
+export const Item = styled(WhiteDivWithBorder)`
   width: 180px;
   height: 240px;
   display: flex;
@@ -15,7 +15,7 @@ export const Item = styled(whiteDivWithBorder)`
   justify-content: space-between;
   padding: 0;
   margin: 2rem auto;
-  box-shadow: 0 1px 10px #909090;
+  box-shadow: ${boxShadowMain};
 
   :hover {
     transform: scale(1.2);
@@ -24,7 +24,6 @@ export const Item = styled(whiteDivWithBorder)`
 `;
 
 export const ItemName = styled.p`
-  color: #123459;
   padding-bottom: 7px;
   margin-top: auto;
   margin-bottom: 0;

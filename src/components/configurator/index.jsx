@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import * as S from "./styled";
+import { backgroundStressColor, fontMainColor, boxMainProps } from "../app/styled";
 import { CreateHeading } from "../create-heading";
 
-const ConfiguratorRender = ({ products }) => {
+const ConfiguratorContainer = ({ products }) => {
   const listCakes = products.map((item) => {
     const { name } = item;
     return <option>{name}</option>;
@@ -21,24 +22,24 @@ const mapStateToProps = ({ productsList: { products } }) => {
   return { products };
 };
 
-export const Configurator = connect(mapStateToProps)(ConfiguratorRender);
+export const Configurator = connect(mapStateToProps)(ConfiguratorContainer);
 
 const RenderSelect = ({ controlId, label, value, onChange, defaultOpt, restOpt, mutedText }) => {
   return (
-    <Form.Group controlId={controlId}>
+    <Form.Group controlId={controlId} style={{ marginBottom: "2rem" }}>
       <Form.Label>{label}</Form.Label>
       <Form.Control
         as="select"
         custom
         value={value}
         onChange={onChange}
-        style={{ border: "0", borderBottom: "1px solid #d7e6e6" }}
+        style={{ border: "0", borderBottom: `${boxMainProps}`, borderTop: `${boxMainProps}`, color: `${fontMainColor}`, fontSize: "0.9rem" }}
       >
         <option>{defaultOpt}</option>
         {restOpt}
 
       </Form.Control>
-      <Form.Text className="text-muted">
+      <Form.Text style={{ color: `${fontMainColor}`, opacity: "0.7", fontSize: "0.9rem" }}>
         {mutedText}
       </Form.Text>
     </Form.Group>
@@ -222,7 +223,7 @@ class ConfForm extends Component {
                     placeholder="Ограничение 30 символов"
                     value={lettering}
                     onChange={this.handleChangeText}
-                    style={{ border: "0", borderBottom: "1px solid #d7e6e6" }}
+                    style={{ border: "0", borderBottom: `${boxMainProps}`, borderTop: `${boxMainProps}`, color: `${fontMainColor}`, fontSize: "0.9rem" }}
                   />
                 </Form.Group>
               </Col>
@@ -241,7 +242,7 @@ class ConfForm extends Component {
             />
           </Form.Group>
 
-          <Button variant="primary" type="submit" style={{ display: "block", margin: "0 auto", backgroundColor: "#4da699" }}>
+          <Button variant="primary" type="submit" style={{ display: "block", margin: "0 auto", backgroundColor: `${backgroundStressColor}` }}>
             ЗАКАЗАТЬ
           </Button>
         </Form>

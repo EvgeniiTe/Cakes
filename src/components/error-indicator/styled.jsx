@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { fontLightColor } from "../app/styled";
+
 export const ErrorIndicator = styled.div`
   display: flex;
   padding: 20px;
@@ -13,4 +15,5 @@ export const ErrorIndicator = styled.div`
   text-align: center;
   align-items: center;
   justify-content: center;
+  color: ${fontLightColor};
 `;

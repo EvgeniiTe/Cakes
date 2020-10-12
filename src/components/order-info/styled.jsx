@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { whiteDivWithBorder } from "../app/styled";
+import { WhiteDivWithBorder } from "../app/styled";
 
-export const OrderInfo = styled(whiteDivWithBorder)`
+export const OrderInfo = styled(WhiteDivWithBorder)`
     text-align: justify;
 `;

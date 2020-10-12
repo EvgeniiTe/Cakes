@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { whiteDivWithBorder } from "../app/styled";
+import { DivWithBorder, backgroundMainColor } from "../app/styled";
 
-export const AbstractWithImage = styled(whiteDivWithBorder)`
- background-color: #f8f9fa;
+export const AbstractWithImage = styled(DivWithBorder)`
+ background-color: ${backgroundMainColor};
  width: 50%;
 
    

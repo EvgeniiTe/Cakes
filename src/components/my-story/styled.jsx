@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { whiteDivWithBorder } from "../app/styled";
+import { WhiteDivWithBorder } from "../app/styled";
 
-export const Story = styled(whiteDivWithBorder)`
+export const Story = styled(WhiteDivWithBorder)`
   text-align: center;
   margin: 0;
 `;

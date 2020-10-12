@@ -1,11 +1,7 @@
 import styled from "styled-components";
-import { whiteDivWithBorder } from "../app/styled";
+import { WhiteDivWithBorder } from "../app/styled";
 
-export const MainInfo = styled(whiteDivWithBorder)`
+export const MainInfo = styled(WhiteDivWithBorder)`
   text-align: center;
   padding: 25px 0;
-`;
-
-export const MyStoryLink = styled.div`
-  color: grey;
 `;

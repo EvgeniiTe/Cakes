@@ -1,15 +1,15 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import { whiteDivWithBorder } from "../app/styled";
+import { DivWithBorder, WhiteDivWithBorder, backgroundMainColor } from "../app/styled";
 
-export const ProductsCarousel = styled(whiteDivWithBorder)`
+export const ProductsCarousel = styled(WhiteDivWithBorder)`
   text-align: justify;
   padding-bottom: 40px;
 `;
 
-export const ProductImage = styled(whiteDivWithBorder)`
-  background-color: #f8f9fa;
+export const ProductImage = styled(DivWithBorder)`
+  background-color: ${backgroundMainColor};
   display: block;
   width: 80%;
   margin-left: auto;

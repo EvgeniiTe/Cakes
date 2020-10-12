@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import { HeaderFooterContainer } from "../app/styled";
+import { fontLightColor, HeaderFooterContainer, backgroundStressColor } from "../app/styled";
+
 import { FlexItem } from "../header/styled";
 
 export const Footer = styled.footer`
   padding: 20px 0;
-  background-color: #4da699;
+  background-color: ${backgroundStressColor};
   margin: 0;
   text-align: center;
 `;
@@ -27,6 +28,6 @@ export const FooterName = styled(FlexItem)`
 `;
 
 export const Copyright = styled.p`
-  color: #ffffff;
+  color: ${fontLightColor};
   margin: -1rem 0;
 `;
