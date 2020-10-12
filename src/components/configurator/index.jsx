@@ -23,6 +23,28 @@ const mapStateToProps = ({ productsList: { products } }) => {
 
 export const Configurator = connect(mapStateToProps)(ConfiguratorRender);
 
+const RenderSelect = ({ controlId, label, value, onChange, defaultOpt, restOpt, mutedText }) => {
+  return (
+    <Form.Group controlId={controlId}>
+      <Form.Label>{label}</Form.Label>
+      <Form.Control
+        as="select"
+        custom
+        value={value}
+        onChange={onChange}
+        style={{ border: "0", borderBottom: "1px solid #d7e6e6" }}
+      >
+        <option>{defaultOpt}</option>
+        {restOpt}
+
+      </Form.Control>
+      <Form.Text className="text-muted">
+        {mutedText}
+      </Form.Text>
+    </Form.Group>
+  );
+};
+
 class ConfForm extends Component {
   state = {
     cake: "",
@@ -90,6 +112,9 @@ class ConfForm extends Component {
       getPhoto,
     } = this.state;
 
+    const listKg = [1.5, 2, 3, 4].map((item) => <option>{item}</option>);
+    const listCount = [1, 2, 3, 4].map((item) => <option>{item}</option>);
+
     return (
       <>
 
@@ -97,59 +122,35 @@ class ConfForm extends Component {
 
         <Form onSubmit={this.handleSubmit}>
 
-          <Form.Group controlId="cake">
-            <Form.Label>Выберите торт из списка</Form.Label>
-            <Form.Control
-              as="select"
-              custom
-              value={cake}
-              onChange={this.handleChangeSelect}
-            >
-              <option>Выберите торт из списка</option>
-              {listCakes}
-            </Form.Control>
-            <Form.Text className="text-muted">
-              Вы можете вернуться к фотографиям тортов на главной странице
-            </Form.Text>
-          </Form.Group>
+          <RenderSelect
+            controlId="cake"
+            label="Выберите торт из списка"
+            value={cake}
+            onChange={this.handleChangeSelect}
+            defaultOpt="Выберите торт из списка"
+            restOpt={listCakes}
+            mutedText="Вы можете вернуться к фотографиям тортов на главной странице"
+          />
 
-          <Form.Group controlId="quantityKg">
-            <Form.Label>Количество килограмм</Form.Label>
-            <Form.Control
-              as="select"
-              custom
-              value={quantityKg}
-              onChange={this.handleChangeSelect}
-            >
-              <option>Количество килограмм</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </Form.Control>
-            <Form.Text className="text-muted">
-              Да, есть технические ограничения по количеству килограмм. Однако, Вы
-              всегда можете заказать капкейки или же несколько тортов.
-            </Form.Text>
-          </Form.Group>
+          <RenderSelect
+            controlId="quantityKg"
+            label="Количество килограмм"
+            value={quantityKg}
+            onChange={this.handleChangeSelect}
+            defaultOpt="Количество килограмм"
+            restOpt={listKg}
+            mutedText="Да, есть технические ограничения по количеству килограмм. Однако, Вы всегда можете заказать капкейки или же несколько тортов."
+          />
 
-          <Form.Group controlId="quantityCakes">
-            <Form.Label>Количество тортов</Form.Label>
-            <Form.Control
-              as="select"
-              custom
-              value={quantityCakes}
-              onChange={this.handleChangeSelect}
-            >
-              <option>Количество тортов</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </Form.Control>
-            <Form.Text className="text-muted">
-              Да, есть технические ограничения по количеству тортов на один заказ.
-            </Form.Text>
-          </Form.Group>
+          <RenderSelect
+            controlId="quantityCakes"
+            label="Количество тортов"
+            value={quantityCakes}
+            onChange={this.handleChangeSelect}
+            defaultOpt="Количество тортов"
+            restOpt={listCount}
+            mutedText="Да, есть технические ограничения по количеству тортов на один заказ."
+          />
 
           <Form.Group controlId="decoration">
             <Form.Label>
@@ -221,6 +222,7 @@ class ConfForm extends Component {
                     placeholder="Ограничение 30 символов"
                     value={lettering}
                     onChange={this.handleChangeText}
+                    style={{ border: "0", borderBottom: "1px solid #d7e6e6" }}
                   />
                 </Form.Group>
               </Col>
@@ -239,7 +241,7 @@ class ConfForm extends Component {
             />
           </Form.Group>
 
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" style={{ display: "block", margin: "0 auto", backgroundColor: "#4da699" }}>
             ЗАКАЗАТЬ
           </Button>
         </Form>
