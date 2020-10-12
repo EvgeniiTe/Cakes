@@ -16,11 +16,11 @@ const ProductsCarouselRender = ({ data, selectItem, sliderSettings }) => {
     const { id, name, picture } = item;
     return (
       <div>
-
-        <S.StyledLink key={name} to="/products" onClick={() => selectItem(id)}>
-
-          <DrawImage src={picture} width="100%" height="500px" alt={name} />
-        </S.StyledLink>
+        <S.ProductImage>
+          <S.StyledLink key={name} to="/products" onClick={() => selectItem(id)}>
+            <DrawImage src={picture} width="100%" height="500px" alt={name} />
+          </S.StyledLink>
+        </S.ProductImage>
       </div>
     );
   });

@@ -8,18 +8,23 @@ export const ProductsCarousel = styled(whiteDivWithBorder)`
   padding-bottom: 40px;
 `;
 
-export const StyledLink = styled(Link)`
-  text-decoration: none;
+export const ProductImage = styled(whiteDivWithBorder)`
+  background-color: #f8f9fa;
   display: block;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  :hover {
-    text-decoration: none;
-  }
-
+  
   /* xs-размер (<=575px) */
   @media (max-width: 575px) {
     width: 100%;
   }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  :hover {
+    text-decoration: none;
+  }
+
 `;
