@@ -3,11 +3,11 @@ import { AbstractWithImage } from "../abstract-with-image";
 import * as S from "./styled";
 
 export const AbstractsLineByLine = ({ data }) => {
-  const abstracts = data.map(({ storyInfoHead, storyInfoText, storyImageRef }, index) => {
+  const abstracts = data.map(({ storyInfoHead, storyInfoText, storyImageRef }) => {
     return (
 
       <AbstractWithImage
-        id={storyInfoHead.length + index}
+        key={storyInfoHead}
         heading={storyInfoHead}
         text={storyInfoText}
         image={storyImageRef}

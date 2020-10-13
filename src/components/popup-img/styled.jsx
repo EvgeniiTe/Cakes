@@ -10,7 +10,7 @@ export const TransparentContainer = styled.div`
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);  
   z-index: 1100;
-  display: ${({ display }) => (display === true ? "block" : "none")};
+  display: ${({ display }) => (display === "true" ? "block" : "none")};
 `;
 
 const appearance = keyframes`

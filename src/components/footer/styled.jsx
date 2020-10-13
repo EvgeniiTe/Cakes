@@ -27,7 +27,7 @@ export const FooterName = styled(FlexItem)`
   font-size: 25px;
 `;
 
-export const Copyright = styled.p`
+export const Copyright = styled.div`
   color: ${fontLightColor};
   margin: -1rem 0;
 `;

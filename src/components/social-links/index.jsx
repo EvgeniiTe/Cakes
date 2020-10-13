@@ -13,7 +13,7 @@ export const SocialLinks = () => {
             <a
               href="https://www.instagram.com/bohemian_cakes/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="social-link"
             >
               <DrawImage
@@ -32,7 +32,7 @@ export const SocialLinks = () => {
             <a
               href="https://t.me/Bohemian_cakes"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="social-link"
             >
               <DrawImage

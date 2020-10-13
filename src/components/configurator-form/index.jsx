@@ -93,8 +93,8 @@ export class ConfiguratorForm extends Component {
         getPhoto,
       } = this.state;
 
-      const listKg = [1.5, 2, 3, 4].map((item) => <option>{item}</option>);
-      const listCount = [1, 2, 3, 4].map((item) => <option>{item}</option>);
+      const listKg = [1.5, 2, 3, 4].map((item) => <option key={item}>{item}</option>);
+      const listCount = [1, 2, 3, 4].map((item) => <option key={item}>{item}</option>);
 
       return (
         <>

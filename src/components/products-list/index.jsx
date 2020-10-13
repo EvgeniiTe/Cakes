@@ -16,9 +16,9 @@ const ProductsListRender = ({ data, selectItem }) => {
   const items = data.map((item) => {
     const { id, name, picture } = item;
     return (
-      <Col lg="auto" md="4" xs="12">
+      <Col lg="auto" md="4" xs="12" key={name}>
         <ScrollLink to="product" smooth offset={-100} duration={500}>
-          <S.Item key={name} onClick={() => selectItem(id)}>
+          <S.Item onClick={() => selectItem(id)}>
             <DrawImage src={picture} width="180px" alt={name} />
             <S.ItemName>{name}</S.ItemName>
           </S.Item>

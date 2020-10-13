@@ -9,7 +9,7 @@ import { DrawImage } from "../draw-image";
 
 export const PopupImgRender = ({ selectedItem: { picture }, display, closeImg }) => {
   return (
-    <S.TransparentContainer display={display}>
+    <S.TransparentContainer display={display.toString()}>
       <S.PopupImgContainer>
         <S.CloseButtonContainer onClick={() => closeImg()}>
           <DrawImage

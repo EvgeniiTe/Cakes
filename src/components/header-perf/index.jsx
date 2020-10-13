@@ -7,7 +7,7 @@ import * as S from "../header/styled";
 export const HeaderPerf = () => {
   const headerElementsMap = headerElements.map(
     ({ element, className, props }) => (
-      <Col lg="4" sm="12"><CreateDiv key={element} childEl={element(props)} className={className} /></Col>
+      <Col key={element} lg="4" sm="12"><CreateDiv childEl={element(props)} className={className} /></Col>
 
     )
   );

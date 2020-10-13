@@ -18,7 +18,7 @@ class ConfiguratorContainer extends Component {
 
     const listCakes = products.map((item) => {
       const { name } = item;
-      return <option>{name}</option>;
+      return <option key={name}>{name}</option>;
     });
 
     return (
