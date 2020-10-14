@@ -60,9 +60,10 @@ export class ConfiguratorForm extends Component {
     };
 
     handleSubmit = (event) => {
+      const { onOrderCreated } = this.props;
       event.preventDefault();
       const formData = JSON.stringify(this.state);
-      console.log(formData);
+      onOrderCreated(formData);
       this.setState({
         cake: "",
         quantityKg: "",

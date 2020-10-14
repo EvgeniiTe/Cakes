@@ -60,3 +60,15 @@ export const popupOpen = () => {
 export const popupClose = () => {
   return { type: "CLOSE_POPUP_IMG" };
 };
+
+// popupConfRes
+export const orderCreated = (order) => {
+  return {
+    type: "CREATE_ORDER",
+    payload: order,
+  };
+};
+
+export const popupOrderClose = () => {
+  return { type: "CLOSE_POPUP_ORDER" };
+};

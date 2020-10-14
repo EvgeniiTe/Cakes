@@ -3,9 +3,10 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withApiRequest } from "../hoc-helpers/withApiRequest";
 import { compose } from "../../utils";
-import { fetchCakes } from "../../actions";
+import { fetchCakes, orderCreated } from "../../actions";
 import * as S from "./styled";
 import { ConfiguratorForm } from "../configurator-form";
+import { PopupConfResult } from "../popup-conf-result";
 
 class ConfiguratorContainer extends Component {
   componentDidMount() {
@@ -14,7 +15,7 @@ class ConfiguratorContainer extends Component {
   }
 
   render() {
-    const { products } = this.props;
+    const { products, createOrder } = this.props;
 
     const listCakes = products.map((item) => {
       const { name } = item;
@@ -23,7 +24,8 @@ class ConfiguratorContainer extends Component {
 
     return (
       <S.Configurator>
-        <ConfiguratorForm listCakes={listCakes} />
+        <ConfiguratorForm listCakes={listCakes} onOrderCreated={(order) => createOrder(order)} />
+        <PopupConfResult />
       </S.Configurator>
     );
   }
@@ -36,7 +38,10 @@ const mapStateToProps = ({ productsList: { products } }) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   const { serviceFunctions } = ownProps;
   return bindActionCreators(
-    { fetchCakes: fetchCakes(serviceFunctions) },
+    {
+      fetchCakes: fetchCakes(serviceFunctions),
+      createOrder: orderCreated
+    },
     dispatch
   );
 };

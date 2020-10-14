@@ -23,7 +23,7 @@ const appearance = keyframes`
   }
 `;
 
-export const PopupImgContainer = styled.div`
+export const PopupContainer = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -52,6 +52,10 @@ export const PopupImgContainer = styled.div`
   @media (max-width: 575px) {
     width: 300px;
   }
+`;
+
+export const PopupImgContainer = styled(PopupContainer)`
+
 `;
 
 export const Image = styled.div`
