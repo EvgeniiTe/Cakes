@@ -10,11 +10,16 @@
 
 ## DEMO
 
-###Desktop
+### Desktop
 ![DEMO of landing page](/demo/demo.gif)
 
-###Mobile
+
+
+### Mobile
 ![DEMO of landing page for mobile](/demo/demo2.gif)
+
+
+
 
 
 ## Technologies used
