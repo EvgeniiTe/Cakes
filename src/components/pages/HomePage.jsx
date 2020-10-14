@@ -2,7 +2,7 @@ import React from "react";
 import * as S from "./styled";
 
 import { MainInfo } from "../main-info";
-import { Products } from "../products";
+import { ProductsCarousel } from "../products-carousel";
 import { MyStory } from "../my-story";
 
 export const HomePage = () => {
@@ -10,7 +10,7 @@ export const HomePage = () => {
     <main>
       <S.MainContainer>
         <MainInfo />
-        <Products />
+        <ProductsCarousel />
         <MyStory />
       </S.MainContainer>
     </main>

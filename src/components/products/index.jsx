@@ -1,14 +1,31 @@
 import React from "react";
+import { Element as ScrollToEl } from "react-scroll";
+import * as S from "./styled";
 
 import { ProductsList } from "../products-list";
 import { Product } from "../product";
-import * as S from "./styled";
+import { CreateHeading } from "../create-heading";
+import { ParagraphsLineByLine } from "../paragraphs-line-by-line";
+import { withApiRequest } from "../hoc-helpers/withApiRequest";
+import { withWebsiteContent } from "../hoc-helpers/withWebsiteContent";
+import { compose } from "../../utils";
 
-export const Products = () => {
+const ProductsRender = (props) => {
+  const { response } = props;
+
   return (
     <S.Products>
+      <CreateHeading h="h2" text="АССОРТИМЕНТ" />
+      <ParagraphsLineByLine data={response} />
       <ProductsList />
-      <Product />
+      <ScrollToEl name="product">
+        <Product />
+      </ScrollToEl>
     </S.Products>
   );
 };
+
+export const Products = compose(
+  withApiRequest(),
+  withWebsiteContent("getProductsInfoFill")
+)(ProductsRender);

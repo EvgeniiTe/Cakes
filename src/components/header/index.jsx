@@ -1,13 +1,15 @@
 import React from "react";
-
+import { Element as ScrollToEl } from "react-scroll";
 import * as S from "./styled";
 
-import { HeaderTop } from "../header-top";
+import { HeaderPerf } from "../header-perf";
 import { HeaderNav } from "../header-nav";
 
 export const Header = () => (
   <S.Header>
-    <HeaderTop />
-    <HeaderNav />
+    <ScrollToEl name="start">
+      <HeaderNav />
+    </ScrollToEl>
+    <HeaderPerf />
   </S.Header>
 );

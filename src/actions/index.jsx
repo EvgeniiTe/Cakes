@@ -51,3 +51,24 @@ export const fetchCake = (serviceFunctions) => (id) => (dispatch) => {
     .then((data) => dispatch(productLoaded(data)))
     .catch((error) => dispatch(productError(error)));
 };
+
+// popupImgDisplay
+export const popupOpen = () => {
+  return { type: "OPEN_POPUP_IMG" };
+};
+
+export const popupClose = () => {
+  return { type: "CLOSE_POPUP_IMG" };
+};
+
+// popupConfRes
+export const orderCreated = (order) => {
+  return {
+    type: "CREATE_ORDER",
+    payload: order,
+  };
+};
+
+export const popupOrderClose = () => {
+  return { type: "CLOSE_POPUP_ORDER" };
+};

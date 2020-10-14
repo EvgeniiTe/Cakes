@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { Link as ScrollLink } from "react-scroll";
 import * as S from "./styled";
 import { compose } from "../../utils";
 import { withApiRequest } from "../hoc-helpers/withApiRequest";
@@ -14,14 +16,24 @@ const ProductsListRender = ({ data, selectItem }) => {
   const items = data.map((item) => {
     const { id, name, picture } = item;
     return (
-      <S.Item key={name} onClick={() => selectItem(id)}>
-        <DrawImage src={picture} width="180px" alt={name} />
-        <S.ItemName>{name}</S.ItemName>
-      </S.Item>
+      <Col lg="auto" md="4" xs="12" key={name}>
+        <ScrollLink to="product" smooth offset={-100} duration={500}>
+          <S.Item onClick={() => selectItem(id)}>
+            <DrawImage src={picture} width="180px" alt={name} />
+            <S.ItemName>{name}</S.ItemName>
+          </S.Item>
+        </ScrollLink>
+      </Col>
     );
   });
 
-  return <S.Items>{items}</S.Items>;
+  return (
+    <S.Items>
+      <Container fluid>
+        <Row>{items}</Row>
+      </Container>
+    </S.Items>
+  );
 };
 class ProductsListContainer extends Component {
   componentDidMount() {

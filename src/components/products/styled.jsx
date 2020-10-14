@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
-export const Products = styled.section`
-  background-color: #ffdfc0;
+import { WhiteDivWithBorder } from "../app/styled";
+
+export const Products = styled(WhiteDivWithBorder)`
+  text-align: justify;
 `;

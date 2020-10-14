@@ -1,17 +1,15 @@
 import styled from "styled-components";
-import { HeaderFooterContainer } from "../app/styled";
+import { HeaderFooterContainer, backgroundStressColor } from "../app/styled";
 
 export const Header = styled.header`
-  padding: 35px 0 0 0;
-  background-color: #c2c3d5;
+  background-color: ${backgroundStressColor};
   margin: 0;
 `;
 
 export const HeaderContainer = styled(HeaderFooterContainer)``;
 
 export const FlexItem = styled.div`
-  width: 300px;
-  height: auto;
+  padding: 0 0 1rem 0;
 `;
 
 export const HeaderLogo = styled(FlexItem)`
@@ -22,4 +20,8 @@ export const HeaderName = styled(FlexItem)`
   font-weight: bold;
   font-size: 45px;
   cursor: pointer;
+  text-align: start;
+  @media (max-width: 992px) {
+    text-align: center;
+  }
 `;

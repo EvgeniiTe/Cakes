@@ -1,6 +1,10 @@
 import React from "react";
+import * as S from "./styled";
 
-export const ErrorIndicator = (props) => {
-  const { error } = props;
-  return <div>{error.toString()}</div>;
+export const ErrorIndicator = ({ error }) => {
+  return (
+    <S.ErrorIndicator>
+      {error.toString()}
+    </S.ErrorIndicator>
+  );
 };
